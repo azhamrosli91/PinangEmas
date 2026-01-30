@@ -4,6 +4,23 @@ import { ArrowLeft, CheckCircle, ArrowRight, Star, MessageCircle, ExternalLink }
 import { Service } from '../types';
 import { SERVICES } from '../constants';
 
+import WorkflowInfographic from './WorkflowInfographic';
+import AutomationWhyChooseUs from './AutomationWhyChooseUs';
+import AutomationDemoCards from './AutomationDemoCards';
+import CoreCapabilities from './CoreCapabilities';
+import HostingDetails from './HostingDetails';
+import SmartHomeEcosystems from './SmartHomeEcosystems';
+import SmartHomeFlow from './SmartHomeFlow';
+import SmartHomeServices from './SmartHomeServices';
+import SoftwareProcess from './SoftwareProcess';
+import SoftwareWhyChooseUs from './SoftwareWhyChooseUs';
+import SoftwareTestimonial from './SoftwareTestimonial';
+import AISpecialties from './AISpecialties';
+import AITrainingFlow from './AITrainingFlow';
+import HRMSModules from './HRMSModules';
+import HRMSWhyChooseUs from './HRMSWhyChooseUs';
+import HRMSTestimonial from './HRMSTestimonial';
+
 interface ServiceDetailPageProps {
   service: Service;
   onBack: () => void;
@@ -17,11 +34,15 @@ const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ service, onBack, 
 
   const nextService = SERVICES[(SERVICES.findIndex(s => s.id === service.id) + 1) % SERVICES.length];
 
-  const handleAction = () => {
+  const handleAction = (planName?: string) => {
     if (service.id === 'hrms-system') {
       window.open('https://hrms.pinangemas.com.my', '_blank');
     } else {
-      const message = `Hello Pinang Emas, I'm interested in your ${service.title} service. I saw your expertise in development and would like to get a quote.`;
+      let message = `Hello Pinang Emas, I'm interested in your ${service.title} service.`;
+      if (planName) {
+        message = `Hello Pinang Emas, I'm interested in the [${planName}] tier for your ${service.title} service.`;
+      }
+      message += ` I saw your expertise in development and would like to get a quote.`;
       window.open(`https://wa.me/601110245454?text=${encodeURIComponent(message)}`, '_blank');
     }
   };
@@ -34,15 +55,15 @@ const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ service, onBack, 
       <div className="relative overflow-hidden py-24 md:py-40">
         <div className="absolute inset-0 gold-gradient opacity-[0.03] -z-10"></div>
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#AA771C]/10 rounded-full blur-[140px] -z-10 translate-x-1/4 -translate-y-1/4"></div>
-        
+
         <div className="container mx-auto px-6">
-          <button 
+          <button
             onClick={onBack}
             className="flex items-center text-[#AA771C] font-black uppercase tracking-widest text-xs mb-12 hover:translate-x-[-8px] transition-transform group"
           >
             <ArrowLeft className="mr-3 w-4 h-4" /> Back to Solutions
           </button>
-          
+
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="lg:w-2/3">
               <div className="w-20 h-20 rounded-2xl bg-[#AA771C]/10 flex items-center justify-center text-[#AA771C] mb-8 ring-1 ring-[#AA771C]/20 shadow-[0_0_30px_rgba(170,119,28,0.15)]">
@@ -58,20 +79,20 @@ const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ service, onBack, 
               <p className="text-xl md:text-2xl text-gray-400 leading-relaxed max-w-3xl mb-10">
                 {service.longDescription}
               </p>
-              
-              {/* Call to Action for non-pricing services or general quote */}
-              {!service.pricing && (
-                <button 
-                  onClick={handleAction}
+
+              {/* Call to Action for non-pricing services or HRMS general access */}
+              {(!service.pricing || isHrms) && (
+                <button
+                  onClick={() => handleAction()}
                   className="px-12 py-6 rounded-2xl gold-gradient text-black font-black text-xl hover:scale-105 transition-all shadow-[0_20px_40px_rgba(170,119,28,0.3)] flex items-center group"
                 >
                   {isHrms ? <ExternalLink className="mr-3 w-6 h-6" /> : <MessageCircle className="mr-3 w-6 h-6" />}
-                  {isHrms ? 'Register Now' : 'Get the Quote Now'}
+                  {isHrms ? 'Try It Now' : 'Get the Quote Now'}
                   <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-2 transition-transform" />
                 </button>
               )}
             </div>
-            
+
             <div className="lg:w-1/3">
               <div className="card-glass p-8 rounded-[2rem] border-white/10 relative">
                 <div className="absolute -top-4 -right-4 bg-gold px-4 py-2 rounded-xl text-black font-black text-xs uppercase tracking-tighter transform rotate-12">
@@ -94,17 +115,76 @@ const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ service, onBack, 
         </div>
       </div>
 
+      {/* Customize Software specific content */}
+      {service.id === 'customize-software' && (
+        <div className="container mx-auto px-6">
+          <SoftwareWhyChooseUs />
+          <SoftwareProcess />
+          <CoreCapabilities features={service.features} />
+          <SoftwareTestimonial />
+        </div>
+      )}
+
+      {/* AI Solutions specific content */}
+      {service.id === 'ai-solutions' && (
+        <div className="container mx-auto px-6">
+          <AISpecialties />
+          <AITrainingFlow />
+        </div>
+      )}
+
+      {/* HRMS System specific content */}
+      {service.id === 'hrms-system' && (
+        <div className="container mx-auto px-6">
+          <HRMSModules />
+          <HRMSWhyChooseUs />
+          <HRMSTestimonial />
+          <CoreCapabilities features={service.features} />
+        </div>
+      )}
+
+      {/* Affordable Hosting specific content */}
+      {service.id === 'hosting-website' && (
+        <div className="container mx-auto px-6">
+          <HostingDetails />
+          <CoreCapabilities features={service.features} />
+        </div>
+      )}
+
+      {/* Smart Home/Office specific content */}
+      {service.id === 'smart-home-office' && (
+        <div className="container mx-auto px-6">
+          <SmartHomeServices />
+          <SmartHomeEcosystems />
+          <SmartHomeFlow />
+          <CoreCapabilities features={service.features} />
+        </div>
+      )}
+
       {/* Pricing Section - Conditionally Rendered */}
-      {service.pricing && (
+      {service.pricing && !isHrms && (
         <div className="container mx-auto px-6 py-24 border-y border-white/5">
+          {service.id === 'n8n-workflow' && (
+            <div className="mb-16">
+              <WorkflowInfographic />
+              <AutomationWhyChooseUs />
+              <AutomationDemoCards />
+            </div>
+          )}
+
           <div className="mb-16 text-center">
             <h2 className="text-[#AA771C] text-sm font-black tracking-[0.3em] uppercase mb-4">Investment Plans</h2>
             <p className="text-4xl font-black text-white">Transparent. Professional. <span className="text-gold italic">Valuable.</span></p>
           </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 max-w-[1600px] mx-auto">
+
+          <div className={`grid grid-cols-1 gap-8 max-w-[1600px] mx-auto ${service.pricing.length === 1
+              ? 'place-items-center'
+              : service.pricing.length === 5
+                ? 'md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5'
+                : 'md:grid-cols-2 lg:grid-cols-3'
+            }`}>
             {service.pricing.map((plan, i) => (
-              <div key={i} className={`card-glass p-8 rounded-[2rem] flex flex-col relative transition-all duration-500 hover:scale-[1.02] ${plan.isPopular ? 'border-[#AA771C]/50 bg-white/5 shadow-[0_0_40px_rgba(170,119,28,0.1)]' : 'border-white/5'}`}>
+              <div key={i} className={`card-glass p-8 rounded-[2rem] flex flex-col h-full relative transition-all duration-500 hover:scale-[1.02] w-full max-w-sm mx-auto ${plan.isPopular ? 'border-[#AA771C]/50 bg-white/5 shadow-[0_0_40px_rgba(170,119,28,0.1)]' : 'border-white/5'}`}>
                 {plan.isPopular && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#AA771C] text-black text-[10px] font-black uppercase tracking-widest px-4 py-1 rounded-full">
                     Most Popular
@@ -117,7 +197,7 @@ const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ service, onBack, 
                     / {plan.period || 'one-time'}
                   </span>
                 </div>
-                <p className="text-gray-400 text-sm mb-8 leading-relaxed">
+                <p className="text-gray-400 text-sm mb-8 leading-relaxed min-h-[6rem]">
                   {plan.description}
                 </p>
                 <ul className="space-y-4 mb-8 flex-grow">
@@ -128,8 +208,8 @@ const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ service, onBack, 
                     </li>
                   ))}
                 </ul>
-                <button 
-                  onClick={handleAction}
+                <button
+                  onClick={() => handleAction(plan.name)}
                   className="w-full py-4 rounded-xl gold-gradient text-black font-black text-xs hover:opacity-90 transition-all flex items-center justify-center space-x-2"
                 >
                   {isHrms ? 'Get Started Free' : 'Select Plan'}
@@ -137,16 +217,16 @@ const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ service, onBack, 
               </div>
             ))}
           </div>
-          
+
           {/* Custom Quote CTA */}
           <div className="mt-16 text-center max-w-2xl mx-auto p-8 rounded-3xl border border-dashed border-white/10">
             <h4 className="text-white font-bold text-xl mb-4">{isHrms ? 'Ready to modernize your HR?' : 'Need something more?'}</h4>
             <p className="text-gray-400 mb-8">
-              {isHrms 
-                ? 'Join hundreds of Malaysian companies optimizing their workforce with Pinang Emas HRMS. Direct portal access available now.' 
+              {isHrms
+                ? 'Join hundreds of Malaysian companies optimizing their workforce with Pinang Emas HRMS. Direct portal access available now.'
                 : 'For custom enterprise requirements, multiple agents, or complex integrations, please reach out to us directly via WhatsApp.'}
             </p>
-            <button 
+            <button
               onClick={handleAction}
               className={`px-10 py-5 rounded-2xl ${isHrms ? 'bg-gold text-black' : 'bg-[#25D366]/10 border border-[#25D366]/30 text-[#25D366]'} font-black flex items-center justify-center mx-auto hover:scale-105 transition-all group`}
             >
@@ -157,31 +237,9 @@ const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ service, onBack, 
         </div>
       )}
 
-      {/* Feature Grid */}
-      <div className="container mx-auto px-6 py-24">
-        <div className="mb-16 text-center">
-          <h2 className="text-[#AA771C] text-sm font-black tracking-[0.3em] uppercase mb-4">Core Capabilities</h2>
-          <p className="text-4xl font-black text-white">Engineered for Reliability.</p>
-        </div>
-        
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {service.features.map((feature, i) => (
-            <div key={i} className="card-glass p-12 rounded-[2.5rem] hover:bg-white/5 transition-all">
-              <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-[#AA771C] mb-6">
-                <Star className="w-6 h-6" />
-              </div>
-              <h3 className="text-2xl font-black text-white mb-4">{feature.title}</h3>
-              <p className="text-gray-400 leading-relaxed text-lg">
-                {feature.description}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
-
       {/* Next Project CTA */}
       <div className="container mx-auto px-6 pt-24">
-        <div 
+        <div
           onClick={() => onNavigate(nextService.id)}
           className="group cursor-pointer card-glass p-12 rounded-[3rem] border-[#AA771C]/10 flex flex-col md:flex-row items-center justify-between hover:border-[#AA771C]/40 transition-all overflow-hidden relative"
         >

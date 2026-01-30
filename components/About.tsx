@@ -93,7 +93,7 @@ const About: React.FC = () => {
         <div className="relative pt-16 border-t border-white/5">
           <div className="text-center mb-16">
             <h4 className="text-[#AA771C] text-sm font-black tracking-[0.3em] uppercase mb-4">The Advantage</h4>
-            <h2 className="text-4xl md:text-5xl font-black text-white">Why Chooses <span className="text-gold italic">Us?</span></h2>
+            <h2 className="text-4xl md:text-5xl font-black text-white">Why Choose <span className="text-gold italic">Us?</span></h2>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
