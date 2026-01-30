@@ -53,9 +53,9 @@ const About: React.FC = () => {
           <div className="lg:w-1/2">
             <div className="relative">
               <div className="aspect-square rounded-3xl overflow-hidden border border-white/5">
-                <LazyImage 
-                  src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=800&h=800" 
-                  alt="Modern Tech Team" 
+                <LazyImage
+                  src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=800&h=800"
+                  alt="Modern Tech Team"
                   className="w-full h-full grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-1000"
                 />
               </div>
@@ -65,14 +65,14 @@ const About: React.FC = () => {
               </div>
             </div>
           </div>
-          
+
           <div className="lg:w-1/2">
             <h2 className="text-gold text-sm font-bold tracking-[0.2em] uppercase mb-4">About Pinang Emas</h2>
             <h3 className="text-4xl md:text-5xl font-bold text-white mb-8">Engineering Success Through Quality Code</h3>
             <p className="text-gray-400 text-lg leading-relaxed mb-10">
               Pinang Emas started with a simple vision: to bring enterprise-level IT solutions to businesses of all sizes without compromising on the quality of service. With over a decade of experience, we believe that technology should be a multiplier for business value, not a hurdle.
             </p>
-            
+
             <div className="space-y-8">
               {values.map((v, i) => (
                 <div key={i} className="flex items-start space-x-6 group">
@@ -93,7 +93,7 @@ const About: React.FC = () => {
         <div className="relative pt-16 border-t border-white/5">
           <div className="text-center mb-16">
             <h4 className="text-[#AA771C] text-sm font-black tracking-[0.3em] uppercase mb-4">The Advantage</h4>
-            <h2 className="text-4xl md:text-5xl font-black text-white">Why Choose <span className="text-gold italic">Us?</span></h2>
+            <h2 className="text-4xl md:text-5xl font-black text-white">Why Chooses <span className="text-gold italic">Us?</span></h2>
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -111,7 +111,7 @@ const About: React.FC = () => {
           </div>
         </div>
       </div>
-      
+
       {/* Background Decor */}
       <div className="absolute top-1/2 left-0 w-96 h-96 bg-[#AA771C]/5 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
     </section>
