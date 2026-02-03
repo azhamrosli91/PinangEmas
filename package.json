@@ -2,6 +2,7 @@
   "name": "pinang-emas---premium-it-solutions",
   "private": true,
   "version": "0.0.0",
+  "description": "Pinang Emas - Premium IT solutions including custom software development, web design & development, mobile apps, n8n automation workflows, hosting, HRMS systems, AI solutions, and smart home/office automation",
   "type": "module",
   "scripts": {
     "dev": "vite",
