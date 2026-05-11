@@ -83,4 +83,21 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- Legal Pages -->
+  <!-- Terms of Service -->
+  <url>
+    <loc>https://pinangemas.com.my/#terms</loc>
+    <lastmod>2026-02-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- Privacy Policy -->
+  <url>
+    <loc>https://pinangemas.com.my/#privacy</loc>
+    <lastmod>2026-02-03</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
 </urlset>
