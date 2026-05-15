@@ -1,5 +1,5 @@
 
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Services from './components/Services';
@@ -7,32 +7,16 @@ import About from './components/About';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ServiceDetailPage from './components/ServiceDetailPage';
+import TermsOfService from './components/TermsOfService';
+import PrivacyPolicy from './components/PrivacyPolicy';
 import { TESTIMONIALS, SERVICES } from './constants';
-import {
-  Quote,
-  ChevronUp,
-  ChevronLeft,
-  ChevronRight,
-  Twitter,
-  Linkedin,
-  Facebook,
-  Link as LinkIcon,
-  Check,
-  Share2
-} from 'lucide-react';
+import { Quote, ChevronUp } from 'lucide-react';
 
 const App: React.FC = () => {
-  const [view, setView] = useState<'home' | 'service-detail'>('home');
+  const [view, setView] = useState<'home' | 'service-detail' | 'terms' | 'privacy'>('home');
   const [selectedServiceId, setSelectedServiceId] = useState<string | null>(null);
   const [scrollProgress, setScrollProgress] = useState(0);
   const [showScrollTop, setShowScrollTop] = useState(false);
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [copiedId, setCopiedId] = useState<string | null>(null);
-  const [activeShareId, setActiveShareId] = useState<string | null>(null);
-  const [theme, setTheme] = useState<'default' | 'midnight'>(() => {
-    const saved = localStorage.getItem('pinang-emas-theme');
-    return (saved as 'default' | 'midnight') || 'default';
-  });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,15 +33,6 @@ const App: React.FC = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  useEffect(() => {
-    if (theme === 'midnight') {
-      document.documentElement.classList.add('midnight');
-    } else {
-      document.documentElement.classList.remove('midnight');
-    }
-    localStorage.setItem('pinang-emas-theme', theme);
-  }, [theme]);
 
   const navigateToService = (id: string) => {
     setSelectedServiceId(id);
@@ -83,37 +58,8 @@ const App: React.FC = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const toggleTheme = () => {
-    setTheme(prev => prev === 'default' ? 'midnight' : 'default');
-  };
-
-  const handleCopyLink = (id: string, content: string) => {
-    const shareText = `"${content}" - Shared from Pinang Emas Premium IT Solutions`;
-    navigator.clipboard.writeText(shareText);
-    setCopiedId(id);
-    setTimeout(() => setCopiedId(null), 2000);
-  };
-
-  const handleSocialShare = (platform: 'twitter' | 'linkedin' | 'facebook', content: string) => {
-    const text = encodeURIComponent(`"${content}" - Check out Pinang Emas for Premium IT Solutions!`);
-    const url = encodeURIComponent(window.location.href);
-    let shareUrl = '';
-
-    switch (platform) {
-      case 'twitter':
-        shareUrl = `https://twitter.com/intent/tweet?text=${text}&url=${url}`;
-        break;
-      case 'linkedin':
-        shareUrl = `https://www.linkedin.com/sharing/share-offsite/?url=${url}`;
-        break;
-      case 'facebook':
-        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
-        break;
-    }
-    window.open(shareUrl, '_blank');
-  };
-
   const selectedService = SERVICES.find(s => s.id === selectedServiceId);
+  const featuredTestimonial = TESTIMONIALS[0];
 
   return (
     <div className="min-h-screen transition-colors duration-500 overflow-x-hidden">
@@ -132,15 +78,13 @@ const App: React.FC = () => {
           <>
             <Hero />
 
-            <section className="py-16 bg-dark-surface border-y border-white/5 overflow-hidden">
+            <section className="py-10 bg-[#F8F5EE] border-y border-[#AA771C]/10 overflow-hidden">
               <div className="container mx-auto px-6">
-                <p className="text-center text-[10px] font-black uppercase tracking-[0.5em] text-white/20 mb-12">Empowering Digital Giants Globally</p>
-                <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24 opacity-20 hover:opacity-50 transition-opacity grayscale">
-                  <span className="text-2xl md:text-3xl font-black tracking-tighter italic">NEXUS.CORE</span>
-                  <span className="text-2xl md:text-3xl font-bold font-serif uppercase tracking-widest">Aurelius</span>
-                  <span className="text-2xl md:text-3xl font-black lowercase tracking-tight">AR Software Malaysia</span>
-                  <span className="text-2xl md:text-3xl font-light uppercase tracking-tighter">Velocity Systems</span>
-                  <span className="text-2xl md:text-3xl font-black tracking-[0.2em]">AZRA GREEN</span>
+                <div className="flex flex-wrap justify-center items-center gap-10 md:gap-20 text-[#101010]/70">
+                  <span className="text-xl md:text-2xl font-medium tracking-tight">NEXUS CORE</span>
+                  <span className="text-xl md:text-3xl font-serif uppercase tracking-[0.18em]">Aurelius</span>
+                  <span className="text-xl md:text-2xl font-black lowercase tracking-tight">ar software malaysia</span>
+                  <span className="text-xl md:text-2xl font-light uppercase tracking-tighter">Velocity Systems</span>
                 </div>
               </div>
             </section>
@@ -148,91 +92,38 @@ const App: React.FC = () => {
             <Services onServiceSelect={navigateToService} />
             <About />
 
-            <section className="py-32 relative overflow-hidden bg-dark-surface">
-              <div className="container mx-auto px-6 relative z-10">
-                <div className="text-center mb-24">
-                  <h2 className="text-[#AA771C] text-sm font-black tracking-[0.3em] uppercase mb-6">Client Stories</h2>
-                  <h3 className="text-4xl md:text-6xl font-black text-white">Trust is Our Primary <br /><span className="text-gold italic">Currency.</span></h3>
+            <section className="py-24 bg-[#FFFDF8]">
+              <div className="container mx-auto px-6">
+                <div className="mb-14">
+                  <h2 className="text-[#AA771C] text-xs font-black tracking-[0.28em] uppercase mb-4 flex items-center">
+                    <span className="w-8 h-px bg-[#AA771C] mr-4"></span>
+                    Client Stories
+                  </h2>
+                  <h3 className="text-4xl md:text-5xl font-black text-[#101010]">Client Stories</h3>
                 </div>
 
-                <div className="max-w-4xl mx-auto relative px-4 sm:px-12 group/carousel">
-                  <div className="overflow-hidden">
-                    <div
-                      className="flex transition-transform duration-700"
-                      style={{ transform: `translateX(-${activeIndex * 100}%)` }}
-                    >
-                      {TESTIMONIALS.map((t) => (
-                        <div key={t.id} className="w-full flex-shrink-0 px-4">
-                          <div className="card-glass p-8 md:p-16 rounded-[3rem] relative border-white/5 group/card">
-                            <div className="absolute top-8 right-8 flex items-center space-x-2">
-                              {/* Share Menu */}
-                              <div className={`flex items-center space-x-2 transition-all duration-300 ${activeShareId === t.id ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-4 pointer-events-none'}`}>
-                                <button
-                                  onClick={() => handleSocialShare('twitter', t.content)}
-                                  className="p-2 rounded-full bg-white/5 hover:bg-[#AA771C]/20 text-gray-400 hover:text-gold transition-colors"
-                                  title="Share on Twitter"
-                                >
-                                  <Twitter className="w-4 h-4" />
-                                </button>
-                                <button
-                                  onClick={() => handleSocialShare('linkedin', t.content)}
-                                  className="p-2 rounded-full bg-white/5 hover:bg-[#AA771C]/20 text-gray-400 hover:text-gold transition-colors"
-                                  title="Share on LinkedIn"
-                                >
-                                  <Linkedin className="w-4 h-4" />
-                                </button>
-                                <button
-                                  onClick={() => handleSocialShare('facebook', t.content)}
-                                  className="p-2 rounded-full bg-white/5 hover:bg-[#AA771C]/20 text-gray-400 hover:text-gold transition-colors"
-                                  title="Share on Facebook"
-                                >
-                                  <Facebook className="w-4 h-4" />
-                                </button>
-                                <button
-                                  onClick={() => handleCopyLink(t.id, t.content)}
-                                  className="p-2 rounded-full bg-white/5 hover:bg-[#AA771C]/20 text-gray-400 hover:text-gold transition-colors relative"
-                                  title="Copy text"
-                                >
-                                  {copiedId === t.id ? <Check className="w-4 h-4 text-green-500" /> : <LinkIcon className="w-4 h-4" />}
-                                </button>
-                              </div>
-
-                              <button
-                                onClick={() => setActiveShareId(activeShareId === t.id ? null : t.id)}
-                                className={`p-3 rounded-full bg-white/5 text-[#AA771C] hover:bg-[#AA771C] hover:text-black transition-all ${activeShareId === t.id ? 'bg-[#AA771C] text-black scale-110' : ''}`}
-                                title="Share Testimonial"
-                              >
-                                <Share2 className="w-5 h-5" />
-                              </button>
-                            </div>
-
-                            <div className="mb-8 p-5 bg-white/5 inline-flex rounded-2xl text-[#AA771C]">
-                              <Quote className="w-8 h-8 opacity-40" />
-                            </div>
-
-                            <p className="text-gray-300 text-xl md:text-2xl italic mb-10 leading-relaxed font-medium">"{t.content}"</p>
-
-                            <div className="flex items-center space-x-6">
-                              <img src={t.avatar} alt={t.name} className="w-16 h-16 rounded-full border-2 border-[#AA771C] object-cover" />
-                              <div>
-                                <p className="font-black text-white text-lg">{t.name}</p>
-                                <p className="text-xs text-[#AA771C] font-bold uppercase tracking-widest">{t.role} @ {t.company}</p>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      ))}
+                <div className="grid lg:grid-cols-[1fr_0.9fr] gap-14 items-start">
+                  <div className="pt-12 border-t border-[#AA771C]/15">
+                    <div className="mb-8 p-5 bg-[#F8F5EE] inline-flex rounded-2xl text-[#AA771C]">
+                      <Quote className="w-8 h-8 opacity-50" />
+                    </div>
+                    <p className="text-2xl md:text-3xl italic font-bold leading-snug text-[#101010] max-w-3xl">
+                      "{featuredTestimonial.content}"
+                    </p>
+                    <div className="flex items-center space-x-5 mt-10">
+                      <img src={featuredTestimonial.avatar} alt={featuredTestimonial.name} className="w-14 h-14 rounded-full border-2 border-[#AA771C]/40 object-cover" />
+                      <div>
+                        <p className="font-black text-[#101010]">{featuredTestimonial.name}</p>
+                        <p className="text-xs text-[#AA771C] font-bold uppercase tracking-widest">{featuredTestimonial.role} @ {featuredTestimonial.company}</p>
+                      </div>
                     </div>
                   </div>
-                  <button onClick={() => setActiveIndex(prev => (prev - 1 + TESTIMONIALS.length) % TESTIMONIALS.length)} className="absolute left-0 top-1/2 -translate-y-1/2 p-4 text-[#AA771C] hover:scale-125 transition-transform"><ChevronLeft /></button>
-                  <button onClick={() => setActiveIndex(prev => (prev + 1) % TESTIMONIALS.length)} className="absolute right-0 top-1/2 -translate-y-1/2 p-4 text-[#AA771C] hover:scale-125 transition-transform"><ChevronRight /></button>
+                  <Contact compact />
                 </div>
               </div>
             </section>
-
-            <Contact />
           </>
-        ) : (
+        ) : view === 'service-detail' ? (
           selectedService && (
             <ServiceDetailPage
               service={selectedService}
@@ -240,14 +131,27 @@ const App: React.FC = () => {
               onNavigate={navigateToService}
             />
           )
-        )}
+        ) : view === 'terms' ? (
+          <TermsOfService onBack={() => navigateHome()} />
+        ) : view === 'privacy' ? (
+          <PrivacyPolicy onBack={() => navigateHome()} />
+        ) : null}
       </main>
 
-      <Footer />
+      <Footer
+        onNavigateToTerms={() => {
+          setView('terms');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }}
+        onNavigateToPrivacy={() => {
+          setView('privacy');
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }}
+      />
 
       <button
         onClick={scrollToTop}
-        className={`fixed bottom-28 right-8 z-50 p-4 rounded-full gold-gradient text-black shadow-2xl transition-all duration-500 transform ${showScrollTop ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0 pointer-events-none'
+        className={`fixed bottom-8 right-8 z-50 p-4 rounded-full gold-gradient text-black shadow-2xl transition-all duration-500 transform ${showScrollTop ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0 pointer-events-none'
           } hover:scale-110 active:scale-95 group`}
       >
         <ChevronUp className="w-6 h-6 group-hover:-translate-y-1 transition-transform" />

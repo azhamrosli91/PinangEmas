@@ -46,73 +46,67 @@ const About: React.FC = () => {
   ];
 
   return (
-    <section id="about" className="py-24 relative overflow-hidden">
+    <section id="about" className="py-20 relative overflow-hidden bg-[#FFFDF8]">
       <div className="container mx-auto px-6">
-        {/* Core Vision Row */}
-        <div className="flex flex-col lg:flex-row items-center gap-16 mb-32">
-          <div className="lg:w-1/2">
+        <div className="grid lg:grid-cols-[0.9fr_1fr_1.2fr] gap-12 items-center mb-20">
+          <div>
             <div className="relative">
-              <div className="aspect-square rounded-3xl overflow-hidden border border-white/5">
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden border border-[#AA771C]/20">
                 <LazyImage
                   src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=800&h=800"
                   alt="Modern Tech Team"
-                  className="w-full h-full grayscale opacity-50 hover:grayscale-0 hover:opacity-100 transition-all duration-1000"
+                  className="w-full h-full object-cover grayscale-[35%] opacity-90"
                 />
               </div>
-              <div className="absolute -bottom-8 -right-8 p-8 gold-gradient rounded-3xl text-black shadow-2xl max-w-xs z-10">
-                <p className="text-4xl font-black mb-2">14+</p>
-                <p className="font-bold uppercase tracking-wider text-xs">Years of industry leadership and technical excellence in high-end development.</p>
+              <div className="absolute -bottom-6 -right-6 p-6 gold-gradient rounded-2xl text-black shadow-2xl max-w-[220px] z-10">
+                <p className="text-3xl font-black mb-1">14+</p>
+                <p className="font-bold uppercase tracking-wider text-[10px]">Years of technical excellence and software delivery.</p>
               </div>
             </div>
           </div>
 
-          <div className="lg:w-1/2">
-            <h2 className="text-gold text-sm font-bold tracking-[0.2em] uppercase mb-4">About Pinang Emas</h2>
-            <h3 className="text-4xl md:text-5xl font-bold text-white mb-8">Engineering Success Through Quality Code</h3>
-            <p className="text-gray-400 text-lg leading-relaxed mb-10">
-              Pinang Emas started with a simple vision: to bring enterprise-level IT solutions to businesses of all sizes without compromising on the quality of service. With over a decade of experience, we believe that technology should be a multiplier for business value, not a hurdle.
+          <div>
+            <h2 className="text-[#AA771C] text-xs font-black tracking-[0.28em] uppercase mb-4">About Pinang Emas</h2>
+            <h3 className="text-3xl md:text-4xl font-black text-[#101010] mb-5 leading-tight">Engineering Success Through Quality Code</h3>
+            <p className="text-[#101010]/75 leading-relaxed mb-7">
+              Pinang Emas started with a simple vision: to deliver Malaysian businesses with online, high-impact software solutions that are reliable, fast, and practical.
             </p>
 
-            <div className="space-y-8">
+            <div className="space-y-5">
               {values.map((v, i) => (
-                <div key={i} className="flex items-start space-x-6 group">
-                  <div className="mt-1 p-3 rounded-xl bg-white/5 text-[#AA771C] group-hover:bg-[#AA771C] group-hover:text-black transition-colors">
+                <div key={i} className="flex items-start space-x-4 group">
+                  <div className="mt-1 p-2.5 rounded-xl bg-[#F8F2DF] text-[#AA771C] border border-[#AA771C]/15">
                     {v.icon}
                   </div>
                   <div>
-                    <h5 className="text-xl font-bold text-white mb-1">{v.title}</h5>
-                    <p className="text-gray-400">{v.description}</p>
+                    <h5 className="text-base font-black text-[#101010] mb-1">{v.title}</h5>
+                    <p className="text-sm text-[#101010]/70">{v.description}</p>
                   </div>
                 </div>
               ))}
             </div>
           </div>
-        </div>
 
-        {/* Why Choose Us Subsection */}
-        <div className="relative pt-16 border-t border-white/5">
-          <div className="text-center mb-16">
-            <h4 className="text-[#AA771C] text-sm font-black tracking-[0.3em] uppercase mb-4">The Advantage</h4>
-            <h2 className="text-4xl md:text-5xl font-black text-white">Why Choose <span className="text-gold italic">Us?</span></h2>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div>
+            <h4 className="text-[#AA771C] text-xs font-black tracking-[0.28em] uppercase mb-4">The Advantage</h4>
+            <h2 className="text-4xl md:text-5xl font-black text-[#101010] mb-10">Why Choose <span className="text-[#AA771C] italic">Us?</span></h2>
+            <div className="grid sm:grid-cols-2 gap-8">
             {advantages.map((adv, idx) => (
-              <div key={idx} className="card-glass p-8 rounded-3xl border-white/5 hover:border-[#AA771C]/30 transition-all duration-500 group">
-                <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[#AA771C]/10 transition-all duration-500">
+              <div key={idx} className="group">
+                <div className="w-14 h-14 rounded-2xl bg-[#F8F2DF] border border-[#AA771C]/20 flex items-center justify-center mb-5">
                   {adv.icon}
                 </div>
-                <h5 className="text-xl font-bold text-white mb-3 group-hover:text-[#AA771C] transition-colors">{adv.title}</h5>
-                <p className="text-sm text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors">
+                <h5 className="text-lg font-black text-[#101010] mb-2">{adv.title}</h5>
+                <p className="text-sm text-[#101010]/70 leading-relaxed">
                   {adv.description}
                 </p>
               </div>
             ))}
+            </div>
           </div>
         </div>
       </div>
 
-      {/* Background Decor */}
       <div className="absolute top-1/2 left-0 w-96 h-96 bg-[#AA771C]/5 rounded-full blur-[120px] -z-10 pointer-events-none"></div>
     </section>
   );
