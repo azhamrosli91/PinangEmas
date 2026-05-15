@@ -22,7 +22,7 @@ const Services: React.FC<ServicesProps> = ({ onServiceSelect }) => {
           </div>
           <div className="max-w-sm">
              <p className="text-[#101010]/75 text-base leading-relaxed">
-               We don't just build software. We engineer competitive advantages through innovation and excellence.
+               Tell us what slows your business down. We help turn repeated tasks, messy handoffs, and daily issues into automated workflows that save time.
              </p>
           </div>
         </div>

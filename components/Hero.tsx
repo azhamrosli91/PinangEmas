@@ -29,7 +29,7 @@ const Hero: React.FC = () => {
           </h1>
 
           <p className="text-lg md:text-xl text-[#101010]/80 mb-10 max-w-xl leading-relaxed font-medium">
-            Your strategic partner for high-impact IT solutions. From bespoke software to AI automation, we build the tech that powers tomorrow.
+            Automation for small businesses in Malaysia. Give us your issue, and we will help automate the workflow, reduce manual work, and fix the problem with practical technology.
           </p>
 
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-5">
