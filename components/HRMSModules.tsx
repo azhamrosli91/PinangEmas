@@ -27,12 +27,12 @@ const HRMSModules: React.FC = () => {
     ];
 
     return (
-        <div className="py-24 border-t border-white/5 bg-[#050505]">
+        <div className="py-24 border-t border-[#AA771C]/10 bg-[#FFFDF8]">
             <div className="container mx-auto">
                 <div className="text-center mb-20">
                     <h4 className="text-gold text-xs font-black uppercase tracking-[0.4em] mb-4">The Unified Dashboard</h4>
-                    <h2 className="text-4xl md:text-5xl font-black text-white">Full-Suite <span className="text-gold italic">Modules.</span></h2>
-                    <p className="text-gray-400 mt-6 max-w-2xl mx-auto">
+                    <h2 className="text-4xl md:text-5xl font-black text-[#101010]">Full-Suite <span className="text-gold italic">Modules.</span></h2>
+                    <p className="text-[#101010]/70 mt-6 max-w-2xl mx-auto">
                         Pinang Emas HRMS isn't just a database—it's a complete ecosystem designed to automate every facet of your Malaysian workforce operations.
                     </p>
                 </div>
@@ -40,12 +40,12 @@ const HRMSModules: React.FC = () => {
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                     {modules.map((m, idx) => (
                         <div key={idx} className="group relative">
-                            <div className="card-glass p-8 rounded-[2.5rem] bg-[#0c0c0c]/80 border-white/5 hover:border-gold/30 hover:bg-[#AA771C]/5 transition-all duration-500 flex flex-col items-start h-full">
-                                <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center text-gold border border-white/10 group-hover:scale-110 group-hover:bg-gold/10 group-hover:border-gold/30 transition-all duration-500 mb-6">
+                            <div className="card-glass p-8 rounded-[2.5rem] bg-white border-[#AA771C]/10 hover:border-gold/30 hover:bg-[#AA771C]/5 transition-all duration-500 flex flex-col items-start h-full">
+                                <div className="w-14 h-14 rounded-2xl bg-[#F8F2DF] flex items-center justify-center text-gold border border-[#AA771C]/20 group-hover:scale-110 group-hover:bg-gold/10 group-hover:border-gold/30 transition-all duration-500 mb-6">
                                     {React.cloneElement(m.icon as React.ReactElement, { size: 28, strokeWidth: 1.5 })}
                                 </div>
-                                <h5 className="text-xl font-black text-white mb-2 group-hover:text-gold transition-colors">{m.name}</h5>
-                                <p className="text-gray-500 text-sm leading-relaxed mb-6">{m.description}</p>
+                                <h5 className="text-xl font-black text-[#101010] mb-2 group-hover:text-gold transition-colors">{m.name}</h5>
+                                <p className="text-[#101010]/55 text-sm leading-relaxed mb-6">{m.description}</p>
 
                                 <div className="mt-auto flex items-center space-x-2 text-[9px] font-black uppercase tracking-widest text-gold/40 opacity-0 group-hover:opacity-100 transition-opacity">
                                     <CheckCircle2 size={12} className="text-gold" />
@@ -63,7 +63,7 @@ const HRMSModules: React.FC = () => {
                     </div>
                     <button
                         onClick={() => window.open('https://hrms.pinangemas.com.my', '_blank')}
-                        className="px-12 py-5 bg-black text-gold rounded-2xl font-black text-lg hover:scale-105 transition-transform shadow-2xl"
+                        className="px-12 py-5 bg-white text-[#101010] border border-[#AA771C]/30 rounded-2xl font-black text-lg hover:scale-105 transition-transform shadow-2xl"
                     >
                         Get Started Now
                     </button>

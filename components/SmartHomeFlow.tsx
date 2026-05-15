@@ -31,9 +31,9 @@ const SmartHomeFlow: React.FC = () => {
     ];
 
     return (
-        <div className="py-24 border-t border-white/5 relative bg-black/40 overflow-hidden">
+        <div className="py-24 border-t border-[#AA771C]/10 relative bg-[#FFF9E8] overflow-hidden">
             {/* Decorative pulse line */}
-            <div className="absolute top-1/2 left-0 w-full h-[1px] bg-white/5 -z-10"></div>
+            <div className="absolute top-1/2 left-0 w-full h-[1px] bg-[#F8F2DF] -z-10"></div>
 
             <div className="container mx-auto px-6">
                 <div className="text-center mb-20">
@@ -41,8 +41,8 @@ const SmartHomeFlow: React.FC = () => {
                         <Play className="w-3 h-3 mr-2 fill-gold" />
                         Live Scenarios
                     </h4>
-                    <h2 className="text-4xl md:text-5xl font-black text-white">How Your Space <span className="text-gold italic">Reacts.</span></h2>
-                    <p className="text-gray-400 mt-6 max-w-xl mx-auto">
+                    <h2 className="text-4xl md:text-5xl font-black text-[#101010]">How Your Space <span className="text-gold italic">Reacts.</span></h2>
+                    <p className="text-[#101010]/70 mt-6 max-w-xl mx-auto">
                         Experience an environment that anticipates your needs through intelligent sensor fusion and AI processing.
                     </p>
                 </div>
@@ -50,25 +50,25 @@ const SmartHomeFlow: React.FC = () => {
                 <div className="grid lg:grid-cols-3 gap-8">
                     {scenarios.map((s, idx) => (
                         <div key={idx} className="group relative">
-                            <div className="card-glass p-10 rounded-[3rem] border-white/5 hover:border-gold/30 transition-all duration-700 h-full flex flex-col items-center text-center">
+                            <div className="card-glass p-10 rounded-[3rem] border-[#AA771C]/10 hover:border-gold/30 transition-all duration-700 h-full flex flex-col items-center text-center">
                                 <div className="relative mb-10">
                                     <div className="absolute inset-0 bg-gold/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                                    <div className="w-24 h-24 rounded-3xl bg-white/5 flex items-center justify-center border border-white/10 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 relative">
-                                        <div className="text-gold group-hover:text-white transition-colors">
+                                    <div className="w-24 h-24 rounded-3xl bg-[#F8F2DF] flex items-center justify-center border border-[#AA771C]/20 group-hover:scale-110 group-hover:rotate-6 transition-all duration-500 relative">
+                                        <div className="text-gold group-hover:text-[#AA771C] transition-colors">
                                             {s.icon}
                                         </div>
-                                        <div className="absolute -bottom-2 -right-2 w-10 h-10 rounded-full bg-dark-bg border border-white/10 flex items-center justify-center">
+                                        <div className="absolute -bottom-2 -right-2 w-10 h-10 rounded-full bg-white border border-[#AA771C]/20 flex items-center justify-center">
                                             {s.subIcon}
                                         </div>
                                     </div>
                                 </div>
 
-                                <h5 className="text-2xl font-black text-white mb-6 group-hover:text-gold transition-colors">{s.title}</h5>
+                                <h5 className="text-2xl font-black text-[#101010] mb-6 group-hover:text-gold transition-colors">{s.title}</h5>
 
                                 <div className="space-y-4 w-full">
-                                    <div className="p-4 rounded-2xl bg-white/5 border border-white/5 text-xs font-bold text-gray-400 uppercase tracking-widest flex items-center justify-between">
+                                    <div className="p-4 rounded-2xl bg-[#F8F2DF] border border-[#AA771C]/10 text-xs font-bold text-[#101010]/70 uppercase tracking-widest flex items-center justify-between">
                                         <span>Input</span>
-                                        <span className="text-white italic">{s.trigger}</span>
+                                        <span className="text-[#101010] italic">{s.trigger}</span>
                                     </div>
 
                                     <div className="flex justify-center">

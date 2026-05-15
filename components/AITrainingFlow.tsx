@@ -40,15 +40,15 @@ const AITrainingFlow: React.FC = () => {
 
             <div className="text-center mb-20">
                 <h4 className="text-gold text-xs font-black uppercase tracking-[0.4em] mb-4">Neural Architecture</h4>
-                <h2 className="text-4xl md:text-5xl font-black text-white italic">AI Training <span className="text-gold">Pipeline</span></h2>
-                <p className="text-gray-400 mt-6 max-w-2xl mx-auto">
+                <h2 className="text-4xl md:text-5xl font-black text-[#101010] italic">AI Training <span className="text-gold">Pipeline</span></h2>
+                <p className="text-[#101010]/70 mt-6 max-w-2xl mx-auto">
                     From raw noise to intelligent assets—our iterative training loop ensures your models evolve with your business data.
                 </p>
             </div>
 
             <div className="relative max-w-6xl mx-auto">
                 {/* Animated Main Path */}
-                <div className="hidden lg:block absolute top-1/2 left-0 w-full h-[2px] bg-white/5 -translate-y-1/2">
+                <div className="hidden lg:block absolute top-1/2 left-0 w-full h-[2px] bg-[#F8F2DF] -translate-y-1/2">
                     <div className="h-full bg-gradient-to-r from-transparent via-gold to-transparent w-full animate-pipeline-flow"></div>
                 </div>
 
@@ -58,11 +58,11 @@ const AITrainingFlow: React.FC = () => {
                             <div className="flex flex-col items-center">
                                 <div className="relative mb-8">
                                     {/* Outer Rings */}
-                                    <div className="absolute inset-[-12px] border border-white/5 rounded-full group-hover:border-gold/20 group-hover:rotate-180 transition-all duration-1000"></div>
-                                    <div className="absolute inset-[-6px] border border-white/10 rounded-full group-hover:border-gold/40 group-hover:-rotate-180 transition-all duration-1000"></div>
+                                    <div className="absolute inset-[-12px] border border-[#AA771C]/10 rounded-full group-hover:border-gold/20 group-hover:rotate-180 transition-all duration-1000"></div>
+                                    <div className="absolute inset-[-6px] border border-[#AA771C]/20 rounded-full group-hover:border-gold/40 group-hover:-rotate-180 transition-all duration-1000"></div>
 
                                     {/* Main Icon Container */}
-                                    <div className="w-24 h-24 rounded-full bg-[#0a0a0a] border border-white/10 flex items-center justify-center text-[#AA771C] group-hover:border-gold group-hover:shadow-[0_0_30px_rgba(170,119,28,0.3)] transition-all duration-500 relative z-10">
+                                    <div className="w-24 h-24 rounded-full bg-[#FFFDF8] border border-[#AA771C]/20 flex items-center justify-center text-[#AA771C] group-hover:border-gold group-hover:shadow-[0_0_30px_rgba(170,119,28,0.3)] transition-all duration-500 relative z-10">
                                         {step.icon}
 
                                         {/* Floating Particles */}
@@ -72,8 +72,8 @@ const AITrainingFlow: React.FC = () => {
 
                                 <div className="text-center group-hover:translate-y-[-5px] transition-transform duration-500">
                                     <span className="text-[10px] font-black uppercase tracking-widest text-gold/40 mb-2 block">Phase 0{idx + 1}</span>
-                                    <h5 className="text-xl font-black text-white mb-3 group-hover:text-gold transition-colors">{step.title}</h5>
-                                    <p className="text-gray-500 text-sm leading-relaxed max-w-[200px] mx-auto group-hover:text-gray-300 transition-colors">
+                                    <h5 className="text-xl font-black text-[#101010] mb-3 group-hover:text-gold transition-colors">{step.title}</h5>
+                                    <p className="text-[#101010]/55 text-sm leading-relaxed max-w-[200px] mx-auto group-hover:text-[#AA771C]/75 transition-colors">
                                         {step.description}
                                     </p>
                                 </div>

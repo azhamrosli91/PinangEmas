@@ -3,7 +3,7 @@ import { Zap, Cpu, Send, Brain, Database, CheckCircle2, Activity } from 'lucide-
 
 const WorkflowInfographic: React.FC = () => {
     return (
-        <div className="relative py-24 px-8 rounded-[4rem] bg-gradient-to-b from-white/[0.03] to-transparent border border-white/10 overflow-hidden mb-24 group shadow-[0_40px_100px_rgba(0,0,0,0.5)]">
+        <div className="relative py-24 px-8 rounded-[4rem] bg-gradient-to-b from-[#FFF9E8] to-white border border-[#AA771C]/20 overflow-hidden mb-24 group shadow-[0_28px_70px_rgba(170,119,28,0.12)]">
             {/* Background patterns */}
             <div className="absolute inset-0 opacity-[0.05] pointer-events-none">
                 <div className="absolute top-0 left-0 w-full h-full" style={{ backgroundImage: 'radial-gradient(#AA771C 1.5px, transparent 1.5px)', backgroundSize: '48px 48px' }}></div>
@@ -19,8 +19,8 @@ const WorkflowInfographic: React.FC = () => {
                         <Activity className="w-3.5 h-3.5 text-gold animate-pulse" />
                         <span className="text-gold text-[10px] font-black uppercase tracking-[0.3em]">System Architecture</span>
                     </div>
-                    <h2 className="text-4xl md:text-5xl font-black text-white mb-6">Visualizing the <span className="text-gold italic">Data Flow</span></h2>
-                    <p className="text-gray-400 max-w-2xl mx-auto text-base leading-relaxed">
+                    <h2 className="text-4xl md:text-5xl font-black text-[#101010] mb-6">Visualizing the <span className="text-gold italic">Data Flow</span></h2>
+                    <p className="text-[#101010]/70 max-w-2xl mx-auto text-base leading-relaxed">
                         Our n8n automation engine acts as the central nervous system for your business operations,
                         connecting disparate tools into a single, high-performance ecosystem.
                     </p>
@@ -30,47 +30,47 @@ const WorkflowInfographic: React.FC = () => {
 
                     {/* Node 1: Trigger */}
                     <div className="flex flex-col items-center w-full lg:w-max group/node scale-90 lg:scale-100">
-                        <div className="w-24 h-24 rounded-[2rem] bg-white/5 border border-white/10 flex items-center justify-center text-[#AA771C] mb-8 group-hover/node:border-gold/50 group-hover/node:bg-gold/10 group-hover/node:scale-110 transition-all duration-700 relative shadow-2xl">
+                        <div className="w-24 h-24 rounded-[2rem] bg-[#F8F2DF] border border-[#AA771C]/20 flex items-center justify-center text-[#AA771C] mb-8 group-hover/node:border-gold/50 group-hover/node:bg-gold/10 group-hover/node:scale-110 transition-all duration-700 relative shadow-2xl">
                             <Zap className="w-12 h-12" />
                             <div className="absolute -top-3 -right-3 w-8 h-8 rounded-2xl bg-gold text-black flex items-center justify-center text-xs font-black shadow-[0_0_20px_rgba(170,119,28,0.5)]">01</div>
                             <div className="absolute inset-0 rounded-[2rem] bg-gold/20 animate-ping opacity-0 group-hover/node:opacity-50"></div>
                         </div>
-                        <h5 className="text-white font-black text-xl mb-3 tracking-tight">External Input</h5>
-                        <p className="text-gray-500 text-sm text-center max-w-[180px] leading-snug">Webhooks, CRM triggers, or scheduled events.</p>
+                        <h5 className="text-[#101010] font-black text-xl mb-3 tracking-tight">External Input</h5>
+                        <p className="text-[#101010]/55 text-sm text-center max-w-[180px] leading-snug">Webhooks, CRM triggers, or scheduled events.</p>
                     </div>
 
                     {/* Connector 1 */}
-                    <div className="hidden lg:flex items-center flex-1 h-[2px] bg-white/10 relative overflow-hidden mx-4 rounded-full">
+                    <div className="hidden lg:flex items-center flex-1 h-[2px] bg-[#AA771C]/10 relative overflow-hidden mx-4 rounded-full">
                         <div className="absolute inset-0 bg-gold w-[40%] h-full animate-flow-right blur-[1px]"></div>
                     </div>
 
                     {/* Node 2: Logic/AI */}
                     <div className="flex flex-col items-center w-full lg:w-max group/node scale-90 lg:scale-100">
-                        <div className="w-24 h-24 rounded-[2rem] bg-white/5 border border-white/10 flex items-center justify-center text-[#AA771C] mb-8 group-hover/node:border-gold/50 group-hover/node:bg-gold/10 group-hover/node:scale-110 transition-all duration-700 relative shadow-2xl">
+                        <div className="w-24 h-24 rounded-[2rem] bg-[#F8F2DF] border border-[#AA771C]/20 flex items-center justify-center text-[#AA771C] mb-8 group-hover/node:border-gold/50 group-hover/node:bg-gold/10 group-hover/node:scale-110 transition-all duration-700 relative shadow-2xl">
                             <Brain className="w-12 h-12" />
                             <div className="absolute -top-3 -right-3 w-8 h-8 rounded-2xl bg-gold text-black flex items-center justify-center text-xs font-black shadow-[0_0_20px_rgba(170,119,28,0.5)]">02</div>
                         </div>
-                        <h5 className="text-white font-black text-xl mb-3 tracking-tight">AI & Cognition</h5>
-                        <p className="text-gray-500 text-sm text-center max-w-[180px] leading-snug">Data processing, AI classification, and decision logic.</p>
+                        <h5 className="text-[#101010] font-black text-xl mb-3 tracking-tight">AI & Cognition</h5>
+                        <p className="text-[#101010]/55 text-sm text-center max-w-[180px] leading-snug">Data processing, AI classification, and decision logic.</p>
                     </div>
 
                     {/* Connector 2 */}
-                    <div className="hidden lg:flex items-center flex-1 h-[2px] bg-white/10 relative overflow-hidden mx-4 rounded-full">
+                    <div className="hidden lg:flex items-center flex-1 h-[2px] bg-[#AA771C]/10 relative overflow-hidden mx-4 rounded-full">
                         <div className="absolute inset-0 bg-gold w-[40%] h-full animate-flow-right-delay blur-[1px]"></div>
                     </div>
 
                     {/* Node 3: Data Integration */}
                     <div className="flex flex-col items-center w-full lg:w-max group/node scale-90 lg:scale-100">
-                        <div className="w-24 h-24 rounded-[2rem] bg-white/5 border border-white/10 flex items-center justify-center text-[#AA771C] mb-8 group-hover/node:border-gold/50 group-hover/node:bg-gold/10 group-hover/node:scale-110 transition-all duration-700 relative shadow-2xl">
+                        <div className="w-24 h-24 rounded-[2rem] bg-[#F8F2DF] border border-[#AA771C]/20 flex items-center justify-center text-[#AA771C] mb-8 group-hover/node:border-gold/50 group-hover/node:bg-gold/10 group-hover/node:scale-110 transition-all duration-700 relative shadow-2xl">
                             <Database className="w-12 h-12" />
                             <div className="absolute -top-3 -right-3 w-8 h-8 rounded-2xl bg-gold text-black flex items-center justify-center text-xs font-black shadow-[0_0_20px_rgba(170,119,28,0.5)]">03</div>
                         </div>
-                        <h5 className="text-white font-black text-xl mb-3 tracking-tight">Data Integrity</h5>
-                        <p className="text-gray-500 text-sm text-center max-w-[180px] leading-snug">Cloud storage sync & legacy system integration.</p>
+                        <h5 className="text-[#101010] font-black text-xl mb-3 tracking-tight">Data Integrity</h5>
+                        <p className="text-[#101010]/55 text-sm text-center max-w-[180px] leading-snug">Cloud storage sync & legacy system integration.</p>
                     </div>
 
                     {/* Connector 3 */}
-                    <div className="hidden lg:flex items-center flex-1 h-[2px] bg-white/10 relative overflow-hidden mx-4 rounded-full">
+                    <div className="hidden lg:flex items-center flex-1 h-[2px] bg-[#AA771C]/10 relative overflow-hidden mx-4 rounded-full">
                         <div className="absolute inset-0 bg-gold w-[40%] h-full animate-flow-right-delay-2 blur-[1px]"></div>
                     </div>
 
@@ -80,8 +80,8 @@ const WorkflowInfographic: React.FC = () => {
                             <CheckCircle2 className="w-12 h-12" />
                             <div className="absolute -top-3 -right-3 w-8 h-8 rounded-2xl bg-gold text-black flex items-center justify-center text-xs font-black">04</div>
                         </div>
-                        <h5 className="text-white font-black text-xl mb-3 tracking-tight">Outcome</h5>
-                        <p className="text-gray-500 text-sm text-center max-w-[180px] leading-snug">Final execution, delivery, and reporting status.</p>
+                        <h5 className="text-[#101010] font-black text-xl mb-3 tracking-tight">Outcome</h5>
+                        <p className="text-[#101010]/55 text-sm text-center max-w-[180px] leading-snug">Final execution, delivery, and reporting status.</p>
                     </div>
 
                 </div>

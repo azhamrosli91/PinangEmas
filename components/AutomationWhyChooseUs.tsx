@@ -27,20 +27,20 @@ const AutomationWhyChooseUs: React.FC = () => {
     ];
 
     return (
-        <div className="py-24 border-t border-white/5 bg-[#0a0a0a]/50">
+        <div className="py-24 border-t border-[#AA771C]/10 bg-[#FFF9E8]">
             <div className="text-center mb-16">
                 <h4 className="text-gold text-xs font-black uppercase tracking-[0.4em] mb-4">The Premium Choice</h4>
-                <h2 className="text-3xl md:text-5xl font-black text-white">Why Setup with <span className="text-gold italic">Pinang Emas?</span></h2>
+                <h2 className="text-3xl md:text-5xl font-black text-[#101010]">Why Setup with <span className="text-gold italic">Pinang Emas?</span></h2>
             </div>
 
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                 {points.map((p, i) => (
                     <div key={i} className="card-glass p-8 rounded-3xl group hover:border-gold/30 transition-all duration-500">
-                        <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center text-gold mb-6 group-hover:scale-110 group-hover:bg-gold/10 transition-all duration-500">
+                        <div className="w-14 h-14 rounded-2xl bg-[#F8F2DF] flex items-center justify-center text-gold mb-6 group-hover:scale-110 group-hover:bg-gold/10 transition-all duration-500">
                             {p.icon}
                         </div>
-                        <h5 className="text-xl font-bold text-white mb-3 group-hover:text-gold transition-colors">{p.title}</h5>
-                        <p className="text-sm text-gray-400 leading-relaxed group-hover:text-gray-300 transition-colors">
+                        <h5 className="text-xl font-bold text-[#101010] mb-3 group-hover:text-gold transition-colors">{p.title}</h5>
+                        <p className="text-sm text-[#101010]/70 leading-relaxed group-hover:text-[#AA771C]/75 transition-colors">
                             {p.description}
                         </p>
                     </div>
