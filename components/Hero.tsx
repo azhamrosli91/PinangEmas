@@ -20,11 +20,11 @@ const Hero: React.FC = () => {
       <div className="relative z-10 mx-auto w-full max-w-[1280px] px-4 md:px-6">
         <div className="max-w-[340px] sm:max-w-3xl">
           <p className="mb-4 text-sm font-extrabold uppercase text-[#FFE088]">
-            Penyelesaian IT SME Malaysia
+            Penyelesaian IT Anda Di Malaysia
           </p>
 
           <h1 className="mb-6 max-w-[340px] text-2xl font-extrabold leading-snug tracking-normal text-white sm:max-w-2xl sm:text-4xl md:text-6xl md:leading-tight">
-            Kecemerlangan Digital Melalui Automasi untuk SME.
+            Kecemerlangan Digital Melalui Automasi untuk perniagaan.
           </h1>
 
           <p className="mb-10 max-w-[340px] text-base leading-8 text-white/90 sm:max-w-xl sm:text-lg">

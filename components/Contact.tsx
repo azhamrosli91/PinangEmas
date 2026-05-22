@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { CheckCircle2, Mail, MapPin, MessageCircle, Phone, Send } from 'lucide-react';
+import { CheckCircle2, Mail, MessageCircle, Phone, Send } from 'lucide-react';
 
 interface ContactProps {
   compact?: boolean;
@@ -46,24 +46,25 @@ const Contact: React.FC<ContactProps> = ({ compact = false }) => {
             </p>
 
             <div className="space-y-6">
-              <div className="flex items-start gap-4">
-                <MapPin className="mt-1 h-5 w-5 text-[#D4AF37]" />
-                <p className="leading-6">Pinang Emas<br />Kuala Lumpur, Malaysia</p>
-              </div>
               <div className="flex items-center gap-4">
                 <Mail className="h-5 w-5 text-[#D4AF37]" />
-                <p>sales.pinangemas@gmail.com</p>
+                <a
+                  href="mailto:sales.pinangemas@gmail.com"
+                  className="transition-colors hover:text-[#FFE088]"
+                >
+                  sales.pinangemas@gmail.com
+                </a>
               </div>
               <div className="flex items-center gap-4">
                 <Phone className="h-5 w-5 text-[#D4AF37]" />
-                <p>+60 14-659 5979</p>
-              </div>
-            </div>
-
-            <div className="mt-12 h-44 overflow-hidden bg-slate-800">
-              <div className="relative h-full w-full bg-[linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:24px_24px]">
-                <div className="absolute left-1/2 top-1/2 h-28 w-28 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/50 bg-white/15"></div>
-                <MapPin className="absolute left-1/2 top-1/2 h-6 w-6 -translate-x-1/2 -translate-y-full text-[#D4AF37]" />
+                <a
+                  href="https://wa.me/60146595979?text=Hello%20Pinang%20Emas,%20I%20would%20like%20to%20enquire%20about%20your%20services."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="transition-colors hover:text-[#FFE088]"
+                >
+                  +60 14-659 5979
+                </a>
               </div>
             </div>
           </aside>
