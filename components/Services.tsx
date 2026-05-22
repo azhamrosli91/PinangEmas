@@ -1,68 +1,74 @@
 
 import React from 'react';
 import { SERVICES } from '../constants';
+import { ArrowRight } from 'lucide-react';
 
 interface ServicesProps {
   onServiceSelect: (id: string) => void;
 }
 
+const serviceDisplayCopy: Record<string, { title?: string; description: string }> = {
+  'customize-software': {
+    title: 'Custom Software',
+    description: 'Pembangunan perisian khas mengikut keperluan unik perniagaan anda.'
+  },
+  'ai-solutions': {
+    description: 'Solusi AI praktikal untuk automasi sokongan pelanggan, data, dan operasi harian.'
+  },
+  'n8n-workflow': {
+    description: 'Automasi aliran kerja yang kompleks merentasi pelbagai aplikasi tanpa kod.'
+  },
+  'hrms-system': {
+    title: 'HRMS',
+    description: 'Sistem pengurusan sumber manusia yang dioptimumkan untuk standard Malaysia.'
+  },
+  'hosting-website': {
+    title: 'Hosting SME',
+    description: 'Hosting mampu milik dan pantas untuk laman web serta aplikasi perniagaan kecil.'
+  },
+  'smart-home-office': {
+    description: 'Automasi ruang rumah dan pejabat dengan kawalan pintar, sensor, dan integrasi IoT.'
+  }
+};
+
 const Services: React.FC<ServicesProps> = ({ onServiceSelect }) => {
   return (
-    <section id="services" className="py-24 relative bg-[#FFFDF8]">
-      <div className="container mx-auto px-6">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-8">
-          <div className="max-w-2xl">
-            <h2 className="text-[#AA771C] text-xs font-black tracking-[0.28em] uppercase mb-5 flex items-center">
-              <span className="w-8 h-px bg-[#AA771C] mr-4"></span>
-              Our Expertise
-            </h2>
-            <h3 className="text-4xl md:text-5xl font-black text-[#101010] mb-4 leading-[1.08]">
-              Solutions Crafted with <span className="text-[#AA771C]">Precision.</span>
-            </h3>
-          </div>
-          <div className="max-w-sm">
-             <p className="text-[#101010]/75 text-base leading-relaxed">
-               Tell us what slows your business down. We help turn repeated tasks, messy handoffs, and daily issues into automated workflows that save time.
-             </p>
-          </div>
+    <section id="services" className="relative scroll-mt-20 bg-[#F8FAFC] py-20">
+      <div className="mx-auto max-w-[1280px] px-4 md:px-6">
+        <div className="mb-14 text-center">
+          <h2 className="mb-4 text-3xl font-bold text-[#0F172A]">Perkhidmatan Kami</h2>
+          <div className="mx-auto h-1 w-20 bg-[#D4AF37]"></div>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-5">
-          {SERVICES.map((service) => (
-            <div 
-              key={service.id} 
-              className="group relative h-full cursor-pointer"
-              onClick={() => onServiceSelect(service.id)}
-            >
-              <div className="bg-white p-7 rounded-2xl h-full min-h-[330px] flex flex-col items-center text-center transition-all duration-500 border border-[#AA771C]/35 hover:border-[#AA771C] hover:shadow-[0_20px_45px_rgba(170,119,28,0.16)]">
-                <div className="mb-6 relative">
-                  <div className="relative w-20 h-20 rounded-2xl bg-[#F8F2DF] border border-[#AA771C]/25 flex items-center justify-center text-[#AA771C]">
-                    <div className="transition-transform duration-500 ease-out group-hover:scale-110 group-hover:-rotate-3">
-                      {service.icon}
-                    </div>
-                  </div>
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {SERVICES.map((service) => {
+            const display = serviceDisplayCopy[service.id];
+
+            return (
+              <button
+                key={service.id}
+                type="button"
+                className="group flex min-h-[300px] flex-col bg-white p-8 text-left shadow-[0_4px_24px_rgba(15,23,42,0.04)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_42px_rgba(15,23,42,0.10)]"
+                onClick={() => onServiceSelect(service.id)}
+              >
+                <div className="mb-7 text-[#B88712] transition-transform duration-300 group-hover:scale-105">
+                  {React.isValidElement(service.icon)
+                    ? React.cloneElement(service.icon as React.ReactElement<{ className?: string }>, { className: 'h-8 w-8' })
+                    : service.icon}
                 </div>
-                
-                <h4 className="text-xl font-black text-[#101010] mb-4 leading-tight group-hover:text-[#AA771C] transition-colors">{service.title}</h4>
-                <p className="text-[#101010]/75 leading-relaxed mb-8 flex-grow text-sm">
-                  {service.description}
+                <h3 className="mb-4 text-2xl font-semibold text-[#0F172A] transition-colors group-hover:text-[#B88712]">
+                  {display?.title || service.title}
+                </h3>
+                <p className="mb-8 flex-grow text-base leading-7 text-slate-600">
+                  {display?.description || service.description}
                 </p>
-                
-                <div className="text-[10px] font-black uppercase tracking-widest text-[#AA771C] group-hover:text-[#101010] transition-colors">
-                  View Case Study Details
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-        
-        <div className="mt-14 text-center">
-          <div className="inline-block rounded-xl border border-[#AA771C]/40 bg-white group cursor-pointer" onClick={() => onServiceSelect(SERVICES[0].id)}>
-            <div className="px-8 py-4 flex items-center space-x-2">
-              <span className="text-[#101010] font-bold">Need a custom feature?</span>
-              <span className="text-[#AA771C] font-black underline decoration-2 underline-offset-4">Let's discuss.</span>
-            </div>
-          </div>
+                <span className="inline-flex items-center gap-2 text-sm font-bold text-[#0F172A] transition-all group-hover:gap-4">
+                  Info Lanjut
+                  <ArrowRight className="h-4 w-4" />
+                </span>
+              </button>
+            );
+          })}
         </div>
       </div>
     </section>

@@ -9,8 +9,78 @@ import Footer from './components/Footer';
 import ServiceDetailPage from './components/ServiceDetailPage';
 import TermsOfService from './components/TermsOfService';
 import PrivacyPolicy from './components/PrivacyPolicy';
-import { TESTIMONIALS, SERVICES } from './constants';
-import { Quote, ChevronUp } from 'lucide-react';
+import { SERVICES } from './constants';
+import { BadgeCheck, ChevronUp, ExternalLink, ReceiptText } from 'lucide-react';
+
+const DemoToolsSection: React.FC = () => {
+  const tools = [
+    {
+      title: 'Pinang Emas HRMS',
+      description: 'Urus cuti, tuntutan, dan profil pekerja dalam satu platform yang mudah digunakan.',
+      href: 'https://hrms.pinangemas.com.my',
+      icon: <BadgeCheck className="h-6 w-6" />
+    },
+    {
+      title: 'Xpen Expense Tracker',
+      description: 'Jejaki setiap sen perbelanjaan syarikat dan automasikan invois dengan mudah.',
+      href: 'https://xpen.pinangemas.com.my',
+      icon: <ReceiptText className="h-6 w-6" />
+    }
+  ];
+
+  return (
+    <section className="bg-[#0F172A] py-20 text-white">
+      <div className="mx-auto max-w-[1280px] px-4 md:px-6">
+        <div className="mb-12 max-w-2xl">
+          <h2 className="mb-4 text-3xl font-bold">Cuba Sekarang</h2>
+          <p className="text-lg leading-8 text-slate-300">
+            Alami sendiri kecanggihan alatan kami. <span className="font-bold text-[#FFE088]">Percuma untuk SME</span> yang ingin bertransformasi.
+          </p>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-2">
+          {tools.map((tool) => (
+            <article key={tool.title} className="border border-white/10 bg-white/[0.06] p-8 transition-colors hover:bg-white/[0.10] md:p-10">
+              <div className="mb-7 flex h-12 w-12 items-center justify-center bg-[#D4AF37] text-[#0F172A]">
+                {tool.icon}
+              </div>
+              <h3 className="mb-4 text-2xl font-bold text-white">{tool.title}</h3>
+              <p className="mb-8 max-w-xl leading-7 text-slate-300">{tool.description}</p>
+              <a
+                href={tool.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-[#D4AF37] px-6 py-3 font-mono text-sm font-semibold uppercase text-[#0F172A] transition-transform hover:-translate-y-0.5"
+              >
+                Uji Alat
+                <ExternalLink className="h-4 w-4" />
+              </a>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const MerchantImpactSection: React.FC = () => {
+  return (
+    <section id="impact" className="scroll-mt-20 bg-white py-16 md:py-20">
+      <div className="mx-auto max-w-[1280px] px-4 md:px-6">
+        <p className="mx-auto mb-12 max-w-5xl text-center text-3xl font-extrabold leading-tight text-[#0F172A] md:text-5xl md:leading-tight">
+          Berjaya membantu <span className="text-[#B88712]">4,549 Peniaga Kecil</span>. Membangunkan ekosistem peniagaan pintar, dan meningkatkan hasil jualan perniaga kecil dengan automasi pintar.
+        </p>
+      </div>
+      <img
+        src="/assets/merchant-community-cafe.png"
+        alt="Komuniti peniaga kecil Malaysia yang dibantu melalui automasi pintar"
+        loading="lazy"
+        decoding="async"
+        className="h-[240px] w-full object-cover object-center sm:h-[320px] md:h-auto"
+      />
+    </section>
+  );
+};
 
 const App: React.FC = () => {
   const [view, setView] = useState<'home' | 'service-detail' | 'terms' | 'privacy'>('home');
@@ -59,12 +129,11 @@ const App: React.FC = () => {
   };
 
   const selectedService = SERVICES.find(s => s.id === selectedServiceId);
-  const featuredTestimonial = TESTIMONIALS[0];
 
   return (
-    <div className="min-h-screen transition-colors duration-500 overflow-x-hidden">
+    <div className="min-h-screen overflow-x-hidden bg-[#F8FAFC] text-[#191C1E] transition-colors duration-500">
       <div
-        className="fixed top-0 left-0 h-[3px] bg-[#AA771C] z-[100] transition-all duration-75"
+        className="fixed top-0 left-0 z-[100] h-[3px] bg-[#D4AF37] transition-all duration-75"
         style={{ width: `${scrollProgress}%` }}
       ></div>
 
@@ -77,51 +146,11 @@ const App: React.FC = () => {
         {view === 'home' ? (
           <>
             <Hero />
-
-            <section className="py-10 bg-[#F8F5EE] border-y border-[#AA771C]/10 overflow-hidden">
-              <div className="container mx-auto px-6">
-                <div className="flex flex-wrap justify-center items-center gap-10 md:gap-20 text-[#101010]/70">
-                  <span className="text-xl md:text-2xl font-medium tracking-tight">NEXUS CORE</span>
-                  <span className="text-xl md:text-3xl font-serif uppercase tracking-[0.18em]">Aurelius</span>
-                  <span className="text-xl md:text-2xl font-black lowercase tracking-tight">ar software malaysia</span>
-                  <span className="text-xl md:text-2xl font-light uppercase tracking-tighter">Velocity Systems</span>
-                </div>
-              </div>
-            </section>
-
+            <MerchantImpactSection />
             <Services onServiceSelect={navigateToService} />
+            <DemoToolsSection />
             <About />
-
-            <section className="py-24 bg-[#FFFDF8]">
-              <div className="container mx-auto px-6">
-                <div className="mb-14">
-                  <h2 className="text-[#AA771C] text-xs font-black tracking-[0.28em] uppercase mb-4 flex items-center">
-                    <span className="w-8 h-px bg-[#AA771C] mr-4"></span>
-                    Client Stories
-                  </h2>
-                  <h3 className="text-4xl md:text-5xl font-black text-[#101010]">Client Stories</h3>
-                </div>
-
-                <div className="grid lg:grid-cols-[1fr_0.9fr] gap-14 items-start">
-                  <div className="pt-12 border-t border-[#AA771C]/15">
-                    <div className="mb-8 p-5 bg-[#F8F5EE] inline-flex rounded-2xl text-[#AA771C]">
-                      <Quote className="w-8 h-8 opacity-50" />
-                    </div>
-                    <p className="text-2xl md:text-3xl italic font-bold leading-snug text-[#101010] max-w-3xl">
-                      "{featuredTestimonial.content}"
-                    </p>
-                    <div className="flex items-center space-x-5 mt-10">
-                      <img src={featuredTestimonial.avatar} alt={featuredTestimonial.name} className="w-14 h-14 rounded-full border-2 border-[#AA771C]/40 object-cover" />
-                      <div>
-                        <p className="font-black text-[#101010]">{featuredTestimonial.name}</p>
-                        <p className="text-xs text-[#AA771C] font-bold uppercase tracking-widest">{featuredTestimonial.role} @ {featuredTestimonial.company}</p>
-                      </div>
-                    </div>
-                  </div>
-                  <Contact compact />
-                </div>
-              </div>
-            </section>
+            <Contact />
           </>
         ) : view === 'service-detail' ? (
           selectedService && (
@@ -151,8 +180,8 @@ const App: React.FC = () => {
 
       <button
         onClick={scrollToTop}
-        className={`fixed bottom-8 right-8 z-50 p-4 rounded-full gold-gradient text-black shadow-2xl transition-all duration-500 transform ${showScrollTop ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0 pointer-events-none'
-          } hover:scale-110 active:scale-95 group`}
+        className={`fixed bottom-6 left-6 z-50 rounded-full bg-[#D4AF37] p-4 text-[#0F172A] shadow-2xl transition-all duration-500 transform ${showScrollTop ? 'translate-y-0 opacity-100' : 'translate-y-20 opacity-0 pointer-events-none'
+          } hover:scale-105 active:scale-95 group`}
       >
         <ChevronUp className="w-6 h-6 group-hover:-translate-y-1 transition-transform" />
       </button>

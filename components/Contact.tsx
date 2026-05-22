@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Send, CheckCircle2, MessageCircle } from 'lucide-react';
+import { CheckCircle2, Mail, MapPin, MessageCircle, Phone, Send } from 'lucide-react';
 
 interface ContactProps {
   compact?: boolean;
@@ -32,109 +32,112 @@ const Contact: React.FC<ContactProps> = ({ compact = false }) => {
     window.open('https://wa.me/60146595979?text=Hello%20Pinang%20Emas,%20I%20would%20like%20to%20enquire%20about%20your%20services.', '_blank');
   };
 
-  const content = isSubmitted ? (
-    <div className="min-h-[360px] flex flex-col items-center justify-center text-center">
-      <div className="w-16 h-16 rounded-full bg-green-500/15 flex items-center justify-center mb-6">
-        <CheckCircle2 className="w-9 h-9 text-green-600" />
-      </div>
-      <h4 className="text-2xl font-black text-[#101010] mb-3">Message Sent</h4>
-      <p className="text-[#101010]/70">Thank you for reaching out. We'll get back to you within 24 hours.</p>
-      <button
-        onClick={() => setIsSubmitted(false)}
-        className="mt-8 text-[#AA771C] font-bold"
-      >
-        Send another message
-      </button>
-    </div>
-  ) : (
-    <form onSubmit={handleSubmit} className="space-y-5">
-      <div className="grid md:grid-cols-2 gap-5">
-        <div>
-          <label className="block text-[10px] font-black uppercase tracking-widest text-[#101010] mb-2">Full Name</label>
-          <input
-            required
-            name="name"
-            type="text"
-            placeholder="John Doe"
-            className="w-full bg-white border border-[#AA771C]/20 rounded-lg px-4 py-3 focus:border-[#AA771C] outline-none transition-colors text-[#101010]"
-          />
-        </div>
-        <div>
-          <label className="block text-[10px] font-black uppercase tracking-widest text-[#101010] mb-2">Email Address</label>
-          <input
-            required
-            name="email"
-            type="email"
-            placeholder="john@example.com"
-            className="w-full bg-white border border-[#AA771C]/20 rounded-lg px-4 py-3 focus:border-[#AA771C] outline-none transition-colors text-[#101010]"
-          />
-        </div>
-      </div>
-
-      <div>
-        <label className="block text-[10px] font-black uppercase tracking-widest text-[#101010] mb-2">Service Interested In</label>
-        <select name="service" className="w-full bg-white border border-[#AA771C]/20 rounded-lg px-4 py-3 focus:border-[#AA771C] outline-none transition-colors appearance-none text-[#101010]">
-          <option>Customize Software</option>
-          <option>AI Solutions</option>
-          <option>n8n Workflows</option>
-          <option>HRMS System</option>
-          <option>Website Hosting</option>
-          <option>Smart Home/Office</option>
-          <option>Enterprise IT</option>
-        </select>
-      </div>
-
-      <div>
-        <label className="block text-[10px] font-black uppercase tracking-widest text-[#101010] mb-2">Your Message</label>
-        <textarea
-          required
-          name="message"
-          rows={5}
-          placeholder="Tell us about your project goals..."
-          className="w-full bg-white border border-[#AA771C]/20 rounded-lg px-4 py-3 focus:border-[#AA771C] outline-none transition-colors text-[#101010]"
-        ></textarea>
-      </div>
-
-      <div className="flex flex-col sm:flex-row items-center gap-3">
-        <button
-          type="submit"
-          className="w-full sm:w-auto px-7 py-4 rounded-xl gold-gradient text-black font-black flex items-center justify-center hover:opacity-90 transition-opacity"
-        >
-          Send Enquiry <Send className="ml-2 w-4 h-4" />
-        </button>
-        <button
-          type="button"
-          onClick={handleWhatsApp}
-          className="w-full sm:w-auto px-7 py-4 rounded-xl border border-[#AA771C]/25 text-[#101010] font-black flex items-center justify-center hover:border-[#25D366]/50 hover:bg-[#25D366]/5 transition-all"
-        >
-          Chat on WhatsApp <MessageCircle className="ml-2 w-4 h-4 text-green-600" />
-        </button>
-      </div>
-      <p className="text-[10px] text-[#101010]/55 italic">
-        * Pinang Emas provides online services exclusively for the Malaysian market. WhatsApp: +6014-6595979
-      </p>
-    </form>
-  );
-
-  if (compact) {
-    return (
-      <section id="contact" className="scroll-mt-28">
-        <div className="border border-[#AA771C]/30 bg-[#FFF9E8] rounded-3xl p-6 md:p-8 shadow-[0_20px_55px_rgba(170,119,28,0.12)]">
-          <h2 className="text-[#AA771C] text-xs font-black tracking-[0.28em] uppercase mb-3">Contact Form</h2>
-          <h3 className="text-3xl md:text-4xl font-black text-[#101010] mb-8">Testimonials</h3>
-          {content}
-        </div>
-      </section>
-    );
-  }
+  const inputClass = 'w-full border border-slate-300 bg-white px-4 py-3 text-[#0F172A] outline-none transition-all focus:border-[#0F172A] focus:ring-2 focus:ring-[#D4AF37]/35';
+  const labelClass = 'mb-2 block font-mono text-xs font-medium text-slate-600';
 
   return (
-    <section id="contact" className="py-24 bg-[#FFFDF8]">
-      <div className="container mx-auto px-6">
-        <div className="max-w-4xl mx-auto border border-[#AA771C]/30 bg-[#FFF9E8] rounded-3xl p-6 md:p-10 shadow-[0_20px_55px_rgba(170,119,28,0.12)]">
-          <h2 className="text-[#AA771C] text-xs font-black tracking-[0.28em] uppercase mb-3">Contact Form</h2>
-          <h3 className="text-3xl md:text-4xl font-black text-[#101010] mb-8">Start Your Project</h3>
-          {content}
+    <section id="contact" className={`${compact ? 'py-12' : 'py-20'} scroll-mt-20 bg-[#F1F5F9]`}>
+      <div className="mx-auto max-w-[1280px] px-4 md:px-6">
+        <div className="grid overflow-hidden bg-white shadow-[0_24px_60px_rgba(15,23,42,0.12)] md:grid-cols-5">
+          <aside className="bg-[#0F172A] p-8 text-white md:col-span-2 md:p-12">
+            <h2 className="mb-6 text-3xl font-bold">Hubungi Kami</h2>
+            <p className="mb-10 leading-7 text-slate-300">
+              Sedia untuk mentransformasikan perniagaan anda? Pasukan kami sedia membantu.
+            </p>
+
+            <div className="space-y-6">
+              <div className="flex items-start gap-4">
+                <MapPin className="mt-1 h-5 w-5 text-[#D4AF37]" />
+                <p className="leading-6">Pinang Emas<br />Kuala Lumpur, Malaysia</p>
+              </div>
+              <div className="flex items-center gap-4">
+                <Mail className="h-5 w-5 text-[#D4AF37]" />
+                <p>sales.pinangemas@gmail.com</p>
+              </div>
+              <div className="flex items-center gap-4">
+                <Phone className="h-5 w-5 text-[#D4AF37]" />
+                <p>+60 14-659 5979</p>
+              </div>
+            </div>
+
+            <div className="mt-12 h-44 overflow-hidden bg-slate-800">
+              <div className="relative h-full w-full bg-[linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:24px_24px]">
+                <div className="absolute left-1/2 top-1/2 h-28 w-28 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/50 bg-white/15"></div>
+                <MapPin className="absolute left-1/2 top-1/2 h-6 w-6 -translate-x-1/2 -translate-y-full text-[#D4AF37]" />
+              </div>
+            </div>
+          </aside>
+
+          <div className="p-8 md:col-span-3 md:p-12">
+            {isSubmitted ? (
+              <div className="flex min-h-[420px] flex-col items-center justify-center text-center">
+                <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-green-500/15">
+                  <CheckCircle2 className="h-9 w-9 text-green-600" />
+                </div>
+                <h3 className="mb-3 text-2xl font-bold text-[#0F172A]">Mesej Dihantar</h3>
+                <p className="text-slate-600">Terima kasih. Kami akan membalas dalam masa 24 jam.</p>
+                <button
+                  onClick={() => setIsSubmitted(false)}
+                  className="mt-8 font-bold text-[#B88712]"
+                >
+                  Hantar mesej lain
+                </button>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="space-y-6">
+                <div className="grid gap-6 md:grid-cols-2">
+                  <div>
+                    <label className={labelClass}>Nama Penuh</label>
+                    <input required name="name" type="text" placeholder="Nama anda" className={inputClass} />
+                  </div>
+                  <div>
+                    <label className={labelClass}>Emel Perniagaan</label>
+                    <input required name="email" type="email" placeholder="emel@syarikat.com" className={inputClass} />
+                  </div>
+                </div>
+
+                <div>
+                  <label className={labelClass}>Perkhidmatan Diminati</label>
+                  <select name="service" className={`${inputClass} appearance-none`}>
+                    <option>n8n Workflow</option>
+                    <option>HRMS System</option>
+                    <option>Xpen Expense Tracker</option>
+                    <option>Customize Software</option>
+                    <option>AI Solutions</option>
+                    <option>Website Hosting</option>
+                    <option>Smart Home/Office</option>
+                  </select>
+                </div>
+
+                <div>
+                  <label className={labelClass}>Mesej Anda</label>
+                  <textarea
+                    required
+                    name="message"
+                    rows={5}
+                    placeholder="Bagaimana kami boleh membantu anda?"
+                    className={inputClass}
+                  ></textarea>
+                </div>
+
+                <div className="grid gap-3 sm:grid-cols-[1fr_auto]">
+                  <button
+                    type="submit"
+                    className="inline-flex items-center justify-center bg-[#0F172A] px-7 py-4 font-bold text-white transition-colors hover:bg-[#1E293B]"
+                  >
+                    Hantar Mesej <Send className="ml-2 h-4 w-4" />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={handleWhatsApp}
+                    className="inline-flex items-center justify-center border border-slate-300 px-7 py-4 font-bold text-[#0F172A] transition-colors hover:border-[#25D366] hover:bg-[#25D366]/5"
+                  >
+                    WhatsApp <MessageCircle className="ml-2 h-4 w-4 text-green-600" />
+                  </button>
+                </div>
+              </form>
+            )}
+          </div>
         </div>
       </div>
     </section>
