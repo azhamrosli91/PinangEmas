@@ -1,5 +1,5 @@
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import Services from './components/Services';
@@ -352,6 +352,11 @@ const MerchantImpactSection: React.FC = () => {
 
 const BusinessHelpCarouselSection: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [isPinnedScroll, setIsPinnedScroll] = useState(() => (
+    typeof window !== 'undefined' && window.innerWidth >= 768
+  ));
+  const [pinPhase, setPinPhase] = useState<'before' | 'pinned' | 'after'>('before');
+  const sectionRef = useRef<HTMLElement | null>(null);
   const helpItems = [
     {
       title: 'Dapatkan lebih banyak bakal pelanggan melalui automasi ads.',
@@ -390,97 +395,175 @@ const BusinessHelpCarouselSection: React.FC = () => {
     }
   ];
 
+  useEffect(() => {
+    const updatePinnedScroll = () => {
+      const shouldPin = window.innerWidth >= 768;
+      setIsPinnedScroll(shouldPin);
+
+      const section = sectionRef.current;
+      if (!shouldPin || !section) {
+        setPinPhase('before');
+        return;
+      }
+
+      const sectionTop = section.offsetTop;
+      const pinOffset = 80;
+      const scrollStart = sectionTop - pinOffset;
+      const scrollEnd = sectionTop + section.offsetHeight - window.innerHeight;
+      const scrollRange = scrollEnd - scrollStart;
+      const progress = scrollRange > 0
+        ? (window.scrollY - scrollStart) / scrollRange
+        : 0;
+      const clampedProgress = Math.min(Math.max(progress, 0), 1);
+      const nextIndex = Math.min(
+        helpItems.length - 1,
+        Math.max(0, Math.round(clampedProgress * (helpItems.length - 1)))
+      );
+
+      if (window.scrollY < scrollStart) {
+        setPinPhase('before');
+      } else if (window.scrollY > scrollEnd) {
+        setPinPhase('after');
+      } else {
+        setPinPhase('pinned');
+      }
+      setActiveIndex(nextIndex);
+    };
+
+    updatePinnedScroll();
+    window.addEventListener('scroll', updatePinnedScroll, { passive: true });
+    window.addEventListener('resize', updatePinnedScroll);
+
+    return () => {
+      window.removeEventListener('scroll', updatePinnedScroll);
+      window.removeEventListener('resize', updatePinnedScroll);
+    };
+  }, [helpItems.length]);
+
+  const scrollToSlide = (index: number) => {
+    const section = sectionRef.current;
+    const targetIndex = Math.min(Math.max(index, 0), helpItems.length - 1);
+
+    if (!isPinnedScroll || !section) {
+      setActiveIndex(targetIndex);
+      return;
+    }
+
+    const sectionTop = section.offsetTop;
+    const pinOffset = 80;
+    const scrollStart = sectionTop - pinOffset;
+    const scrollEnd = sectionTop + section.offsetHeight - window.innerHeight;
+    const scrollRange = scrollEnd - scrollStart;
+    const targetProgress = helpItems.length > 1 ? targetIndex / (helpItems.length - 1) : 0;
+
+    window.scrollTo({
+      top: scrollStart + (scrollRange * targetProgress),
+      behavior: 'smooth'
+    });
+  };
+
   const goToPrevious = () => {
-    setActiveIndex((current) => (current === 0 ? helpItems.length - 1 : current - 1));
+    const nextIndex = activeIndex === 0 ? helpItems.length - 1 : activeIndex - 1;
+    scrollToSlide(nextIndex);
   };
 
   const goToNext = () => {
-    setActiveIndex((current) => (current === helpItems.length - 1 ? 0 : current + 1));
+    const nextIndex = activeIndex === helpItems.length - 1 ? 0 : activeIndex + 1;
+    scrollToSlide(nextIndex);
   };
 
   const activeItem = helpItems[activeIndex];
+  const pinnedPanelClass = isPinnedScroll
+    ? pinPhase === 'pinned'
+      ? 'md:fixed md:left-0 md:right-0 md:top-20 md:z-10 md:bg-[#0F172A]'
+      : pinPhase === 'after'
+        ? 'md:absolute md:bottom-0 md:left-0 md:right-0'
+        : 'md:relative'
+    : '';
 
   return (
-    <section id="business-help" className="scroll-mt-20 bg-[#F8FAFC] py-16 md:py-20">
-      <div className="mx-auto max-w-[1280px] px-4 md:px-6">
-        <div className="mb-12 flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
-          <div className="max-w-3xl">
-            <h2 className="text-3xl font-extrabold leading-tight text-[#0F172A] md:text-5xl">
-              Ketahui Apa Kami Bantu Perniagaan Anda
-            </h2>
-          </div>
-          <div className="flex gap-3">
-            <button
-              type="button"
-              onClick={goToPrevious}
-              aria-label="Paparan sebelumnya"
-              className="flex h-12 w-12 items-center justify-center border border-slate-300 bg-white text-[#0F172A] transition-colors hover:border-[#D4AF37] hover:bg-[#D4AF37]"
-            >
-              <ChevronLeft className="h-5 w-5" />
-            </button>
-            <button
-              type="button"
-              onClick={goToNext}
-              aria-label="Paparan seterusnya"
-              className="flex h-12 w-12 items-center justify-center bg-[#0F172A] text-white transition-colors hover:bg-[#D4AF37] hover:text-[#0F172A]"
-            >
-              <ChevronRight className="h-5 w-5" />
-            </button>
-          </div>
-        </div>
-
-        <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
-          <article className="overflow-hidden bg-[#0F172A] text-white">
-            {'imageSrc' in activeItem && activeItem.imageSrc ? (
-              <img
-                src={activeItem.imageSrc}
-                alt={activeItem.imageAlt}
-                loading="lazy"
-                decoding="async"
-                className="h-[260px] w-full object-cover object-center md:h-[420px]"
-              />
-            ) : (
-              <div className="flex h-[260px] w-full items-center justify-center bg-[#111C32] md:h-[420px]">
-                <div className="flex h-20 w-20 items-center justify-center bg-[#D4AF37] text-[#0F172A]">
-                  {activeItem.icon}
-                </div>
+    <section
+      ref={sectionRef}
+      id="business-help"
+      className="relative scroll-mt-20 bg-[#F8FAFC]"
+      style={isPinnedScroll ? { height: `${helpItems.length * 100}vh` } : undefined}
+    >
+      <div className={`md:min-h-[calc(100vh-5rem)] ${pinnedPanelClass}`}>
+        <article className="relative min-h-[calc(100vh-5rem)] overflow-hidden bg-[#0F172A] text-white">
+          {'imageSrc' in activeItem && activeItem.imageSrc ? (
+            <img
+              src={activeItem.imageSrc}
+              alt={activeItem.imageAlt}
+              loading="lazy"
+              decoding="async"
+              className="absolute inset-0 h-full w-full object-cover object-center transition-opacity duration-300"
+            />
+          ) : (
+            <div className="absolute inset-0 flex items-center justify-center bg-[#111C32]">
+              <div className="flex h-20 w-20 items-center justify-center bg-[#D4AF37] text-[#0F172A]">
+                {activeItem.icon}
               </div>
-            )}
-            <div className="p-8 md:p-10">
-              <p className="mb-4 font-mono text-sm font-semibold text-[#FFE088]">
-                {String(activeIndex + 1).padStart(2, '0')} / {String(helpItems.length).padStart(2, '0')}
-              </p>
-              <h3 className="mb-5 text-2xl font-extrabold leading-tight md:text-3xl">
-                {activeItem.title}
-              </h3>
-              <p className="max-w-2xl text-base leading-7 text-slate-300">
-                {activeItem.description}
-              </p>
             </div>
-          </article>
+          )}
+          <div className="absolute inset-0 bg-gradient-to-r from-[#020617]/85 via-[#020617]/35 to-[#020617]/10" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#020617]/80 via-transparent to-[#020617]/45" />
 
-          <div className="grid gap-3">
-            {helpItems.map((item, index) => (
-              <button
-                key={item.title}
-                type="button"
-                onClick={() => setActiveIndex(index)}
-                className={`flex items-center gap-4 border p-5 text-left transition-all ${
-                  index === activeIndex
-                    ? 'border-[#D4AF37] bg-white shadow-[0_16px_40px_rgba(15,23,42,0.08)]'
-                    : 'border-slate-200 bg-white/70 hover:border-[#D4AF37]/60 hover:bg-white'
-                }`}
-              >
-                <span className={`font-mono text-sm font-semibold ${index === activeIndex ? 'text-[#B88712]' : 'text-slate-400'}`}>
-                  {String(index + 1).padStart(2, '0')}
-                </span>
-                <span className="text-base font-bold leading-6 text-[#0F172A]">
-                  {item.title}
-                </span>
-              </button>
-            ))}
+          <div className="relative z-10 mx-auto flex min-h-[calc(100vh-5rem)] w-full max-w-[1280px] flex-col justify-between px-4 py-8 md:px-6 md:py-10">
+            <div className="flex flex-col gap-6 md:flex-row md:items-start md:justify-between">
+              <h2 className="max-w-4xl text-3xl font-extrabold leading-tight text-white md:text-5xl">
+                Ketahui Apa Kami Bantu Perniagaan Anda
+              </h2>
+              <div className="flex gap-3">
+                <button
+                  type="button"
+                  onClick={goToPrevious}
+                  aria-label="Paparan sebelumnya"
+                  className="flex h-12 w-12 items-center justify-center border border-white/40 bg-white/15 text-white backdrop-blur transition-colors hover:border-[#D4AF37] hover:bg-[#D4AF37] hover:text-[#0F172A]"
+                >
+                  <ChevronLeft className="h-5 w-5" />
+                </button>
+                <button
+                  type="button"
+                  onClick={goToNext}
+                  aria-label="Paparan seterusnya"
+                  className="flex h-12 w-12 items-center justify-center bg-[#D4AF37] text-[#0F172A] transition-colors hover:bg-white"
+                >
+                  <ChevronRight className="h-5 w-5" />
+                </button>
+              </div>
+            </div>
+
+            <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+              <div className="max-w-3xl">
+                <p className="mb-4 font-mono text-sm font-semibold text-[#FFE088]">
+                  {String(activeIndex + 1).padStart(2, '0')} / {String(helpItems.length).padStart(2, '0')}
+                </p>
+                <h3 className="mb-5 text-3xl font-extrabold leading-tight md:text-5xl">
+                  {activeItem.title}
+                </h3>
+                <p className="max-w-2xl text-base leading-7 text-slate-100 md:text-lg">
+                  {activeItem.description}
+                </p>
+              </div>
+
+              <div className="flex flex-wrap gap-2 md:max-w-sm md:justify-end">
+                {helpItems.map((item, index) => (
+                  <button
+                    key={item.title}
+                    type="button"
+                    onClick={() => scrollToSlide(index)}
+                    aria-label={`Paparan ${index + 1}: ${item.title}`}
+                    className={`h-3 transition-all ${
+                      index === activeIndex
+                        ? 'w-12 bg-[#D4AF37]'
+                        : 'w-6 bg-white/50 hover:bg-white'
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
           </div>
-        </div>
+        </article>
       </div>
     </section>
   );
