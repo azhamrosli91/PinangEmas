@@ -66,9 +66,9 @@ const automationShowcaseItems: AutomationShowcaseItem[] = [
 ];
 
 const MiniMetric: React.FC<{ label: string; value: string; tone?: string }> = ({ label, value, tone = 'text-blue-500' }) => (
-  <div className="rounded-md bg-white p-4 shadow-[0_12px_32px_rgba(15,23,42,0.08)]">
+  <div className="rounded-md bg-white p-3 shadow-[0_12px_32px_rgba(15,23,42,0.08)] sm:p-4">
     <p className="mb-1 text-[10px] font-semibold text-slate-400">{label}</p>
-    <p className={`text-xl font-extrabold ${tone}`}>{value}</p>
+    <p className={`text-lg font-extrabold sm:text-xl ${tone}`}>{value}</p>
   </div>
 );
 
@@ -84,10 +84,10 @@ const AutomationMockup: React.FC<{ type: AutomationShowcaseItem['visual'] }> = (
           className="h-full w-full object-cover object-center grayscale"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#020617]/85 via-[#020617]/35 to-transparent" />
-        <div className="absolute right-8 top-7 flex h-16 w-16 items-center justify-center rounded-xl bg-emerald-500 text-3xl font-black text-white shadow-[0_18px_45px_rgba(16,185,129,0.45)]">
+        <div className="absolute right-4 top-4 flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-500 text-2xl font-black text-white shadow-[0_18px_45px_rgba(16,185,129,0.45)] sm:right-8 sm:top-7 sm:h-16 sm:w-16 sm:text-3xl">
           X
         </div>
-        <div className="absolute bottom-8 right-10 w-28 rounded-[18px] border border-white/20 bg-[#020617]/85 p-3 shadow-2xl">
+        <div className="absolute bottom-4 right-4 w-24 rounded-[18px] border border-white/20 bg-[#020617]/85 p-3 shadow-2xl sm:bottom-8 sm:right-10 sm:w-28">
           <div className="mb-3 h-3 w-16 rounded-full bg-emerald-400" />
           <div className="space-y-2">
             <div className="h-2 rounded-full bg-white/65" />
@@ -101,30 +101,30 @@ const AutomationMockup: React.FC<{ type: AutomationShowcaseItem['visual'] }> = (
 
   if (type === 'workflow') {
     return (
-      <div className="h-full min-h-[240px] rounded-[18px] bg-slate-50 p-5 text-[#0F172A]">
+      <div className="h-full min-h-[240px] rounded-[18px] bg-slate-50 p-4 text-[#0F172A] sm:p-5">
         <div className="mb-5 flex items-center justify-between">
           <p className="text-lg font-extrabold">Dashboard</p>
-          <div className="h-2 w-36 rounded-full bg-slate-200" />
+          <div className="h-2 w-20 rounded-full bg-slate-200 sm:w-36" />
         </div>
-        <div className="mb-6 grid grid-cols-4 gap-3">
+        <div className="mb-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
           <MiniMetric label="Tugasan" value="128" />
           <MiniMetric label="Dalam Proses" value="76" tone="text-cyan-500" />
           <MiniMetric label="Selesai" value="52" tone="text-emerald-500" />
           <MiniMetric label="Tertangguh" value="12" tone="text-rose-500" />
         </div>
-        <div className="grid grid-cols-[1fr_0.55fr] gap-4">
-          <div className="rounded-lg bg-white p-5 shadow-[0_12px_32px_rgba(15,23,42,0.08)]">
+        <div className="grid gap-4 lg:grid-cols-[1fr_0.55fr]">
+          <div className="rounded-lg bg-white p-4 shadow-[0_12px_32px_rgba(15,23,42,0.08)] sm:p-5">
             <p className="mb-5 text-sm font-bold">Aliran Kerja Automasi</p>
-            <div className="flex items-center justify-between">
+            <div className="flex flex-wrap items-center gap-2 sm:flex-nowrap sm:justify-between">
               {['Lead', 'CRM', 'Team', 'Invoice', 'Report'].map((step, index) => (
                 <React.Fragment key={step}>
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-100 text-xs font-bold text-emerald-600">{step}</div>
-                  {index < 4 && <div className="h-px flex-1 bg-cyan-300" />}
+                  <div className="flex h-11 min-w-11 items-center justify-center rounded-xl bg-emerald-100 px-2 text-xs font-bold text-emerald-600 sm:h-12 sm:min-w-12">{step}</div>
+                  {index < 4 && <div className="hidden h-px flex-1 bg-cyan-300 sm:block" />}
                 </React.Fragment>
               ))}
             </div>
           </div>
-          <div className="rounded-lg bg-white p-5 shadow-[0_12px_32px_rgba(15,23,42,0.08)]">
+          <div className="rounded-lg bg-white p-4 shadow-[0_12px_32px_rgba(15,23,42,0.08)] sm:p-5">
             <p className="mb-4 text-sm font-bold">Aktiviti Terkini</p>
             {['Pesanan Baru Diterima', 'Semakan Dokumen', 'Kelulusan Diterima'].map((activity) => (
               <div key={activity} className="mb-3 flex items-center gap-2 text-xs text-slate-500">
@@ -140,27 +140,27 @@ const AutomationMockup: React.FC<{ type: AutomationShowcaseItem['visual'] }> = (
 
   if (type === 'analytics') {
     return (
-      <div className="h-full min-h-[240px] rounded-[18px] bg-slate-50 p-5 text-[#0F172A]">
+      <div className="h-full min-h-[240px] rounded-[18px] bg-slate-50 p-4 text-[#0F172A] sm:p-5">
         <div className="mb-5 flex items-center justify-between">
           <p className="text-lg font-extrabold">Analitik Prestasi</p>
-          <span className="rounded-md bg-white px-3 py-2 text-xs font-semibold text-slate-500">7 Hari Terakhir</span>
+          <span className="rounded-md bg-white px-2 py-2 text-[10px] font-semibold text-slate-500 sm:px-3 sm:text-xs">7 Hari Terakhir</span>
         </div>
-        <div className="mb-5 grid grid-cols-4 gap-3">
+        <div className="mb-5 grid grid-cols-2 gap-3 sm:grid-cols-4">
           <MiniMetric label="Jumlah Jualan" value="RM245k" tone="text-slate-900" />
           <MiniMetric label="Tugasan Selesai" value="1,250" tone="text-slate-900" />
           <MiniMetric label="Kecekapan" value="92%" tone="text-slate-900" />
           <MiniMetric label="Masa Purata" value="3j 45m" tone="text-slate-900" />
         </div>
-        <div className="grid grid-cols-[1fr_0.72fr] gap-4">
-          <div className="rounded-lg bg-white p-5 shadow-[0_12px_32px_rgba(15,23,42,0.08)]">
+        <div className="grid gap-4 lg:grid-cols-[1fr_0.72fr]">
+          <div className="rounded-lg bg-white p-4 shadow-[0_12px_32px_rgba(15,23,42,0.08)] sm:p-5">
             <p className="mb-4 text-sm font-bold">Graf Jualan</p>
-            <div className="flex h-28 items-end gap-2">
+            <div className="flex h-24 items-end gap-2 sm:h-28">
               {[34, 28, 54, 68, 42, 74, 52, 86, 78, 100].map((height, index) => (
                 <div key={index} className="flex-1 rounded-t bg-gradient-to-t from-blue-500 to-cyan-300" style={{ height: `${height}%` }} />
               ))}
             </div>
           </div>
-          <div className="rounded-lg bg-white p-5 shadow-[0_12px_32px_rgba(15,23,42,0.08)]">
+          <div className="rounded-lg bg-white p-4 shadow-[0_12px_32px_rgba(15,23,42,0.08)] sm:p-5">
             <p className="mb-5 text-sm font-bold">Taburan Tugasan</p>
             <div className="mx-auto mb-4 flex h-24 w-24 items-center justify-center rounded-full border-[16px] border-blue-500 border-r-emerald-400 border-t-cyan-300 text-sm font-black">
               62%
@@ -177,10 +177,11 @@ const AutomationMockup: React.FC<{ type: AutomationShowcaseItem['visual'] }> = (
   }
 
   return (
-    <div className="h-full min-h-[240px] rounded-[18px] bg-slate-50 p-5 text-[#0F172A]">
+    <div className="h-full min-h-[240px] rounded-[18px] bg-slate-50 p-4 text-[#0F172A] sm:p-5">
       <p className="mb-5 text-lg font-extrabold">Pasukan</p>
-      <div className="grid grid-cols-[1fr_0.48fr] gap-4">
-        <div className="rounded-lg bg-white p-5 shadow-[0_12px_32px_rgba(15,23,42,0.08)]">
+      <div className="grid gap-4 lg:grid-cols-[1fr_0.48fr]">
+        <div className="overflow-x-auto rounded-lg bg-white p-4 shadow-[0_12px_32px_rgba(15,23,42,0.08)] sm:p-5">
+          <div className="min-w-[460px]">
           <div className="mb-4 grid grid-cols-[1.2fr_1fr_0.7fr_0.7fr] text-xs font-bold text-slate-400">
             <span>Ahli</span><span>Peranan</span><span>Tugasan</span><span>Status</span>
           </div>
@@ -197,8 +198,9 @@ const AutomationMockup: React.FC<{ type: AutomationShowcaseItem['visual'] }> = (
               <span className="rounded-full bg-emerald-100 px-3 py-1 text-center font-bold text-emerald-600">Aktif</span>
             </div>
           ))}
+          </div>
         </div>
-        <div className="rounded-lg bg-white p-5 shadow-[0_12px_32px_rgba(15,23,42,0.08)]">
+        <div className="rounded-lg bg-white p-4 shadow-[0_12px_32px_rgba(15,23,42,0.08)] sm:p-5">
           <p className="mb-5 text-sm font-bold">Ringkasan Prestasi</p>
           <div className="mb-4 flex h-24 w-24 items-center justify-center rounded-full border-[10px] border-emerald-400 border-r-cyan-200 text-xl font-black">
             92%
@@ -443,9 +445,9 @@ const BusinessHelpCarouselSection: React.FC = () => {
   const scrollToSlide = (index: number) => {
     const section = sectionRef.current;
     const targetIndex = Math.min(Math.max(index, 0), helpItems.length - 1);
+    setActiveIndex(targetIndex);
 
     if (!isPinnedScroll || !section) {
-      setActiveIndex(targetIndex);
       return;
     }
 
