@@ -288,13 +288,18 @@ const DemoToolsSection: React.FC = () => {
       title: 'Pinang Emas HRMS',
       description: 'Urus cuti, tuntutan, dan profil pekerja dalam satu platform yang mudah digunakan.',
       href: 'https://hrms.pinangemas.com.my',
-      icon: <BadgeCheck className="h-6 w-6" />
+      icon: <BadgeCheck className="h-6 w-6" />,
+      ctaLabel: 'Cuba Sekarang'
     },
     {
       title: 'Xpen Expense Tracker',
       description: 'Jejaki setiap sen perbelanjaan syarikat dan automasikan invois dengan mudah.',
       href: 'https://xpen.pinangemas.com.my',
-      icon: <ReceiptText className="h-6 w-6" />
+      icon: <ReceiptText className="h-6 w-6" />,
+      imageSrc: '/assets/xpen-expense-tracker-showcase.png',
+      imageAlt: 'Xpen Expense Tracker membantu mengurus kewangan perniagaan dengan paparan aplikasi mudah alih',
+      ctaLabel: 'Cuba Sekarang Percuma',
+      highlightText: 'Tanpa Bayaran, Kad Kredit, Percuma sepenuhnya'
     }
   ];
 
@@ -310,19 +315,36 @@ const DemoToolsSection: React.FC = () => {
 
         <div className="grid gap-6 md:grid-cols-2">
           {tools.map((tool) => (
-            <article key={tool.title} className="border border-white/10 bg-white/[0.06] p-8 transition-colors hover:bg-white/[0.10] md:p-10">
-              <div className="mb-7 flex h-12 w-12 items-center justify-center bg-[#D4AF37] text-[#0F172A]">
-                {tool.icon}
-              </div>
+            <article key={tool.title} className="flex flex-col border border-white/10 bg-white/[0.06] p-6 transition-colors hover:bg-white/[0.10] md:p-8 lg:p-10">
+              {tool.imageSrc ? (
+                <div className="mb-7 overflow-hidden bg-[#020617] aspect-[4/3] sm:aspect-[16/10]">
+                  <img
+                    src={tool.imageSrc}
+                    alt={tool.imageAlt}
+                    loading="lazy"
+                    decoding="async"
+                    className="h-full w-full object-cover object-[38%_center] sm:object-center"
+                  />
+                </div>
+              ) : (
+                <div className="mb-7 flex h-12 w-12 items-center justify-center bg-[#D4AF37] text-[#0F172A]">
+                  {tool.icon}
+                </div>
+              )}
               <h3 className="mb-4 text-2xl font-bold text-white">{tool.title}</h3>
-              <p className="mb-8 max-w-xl leading-7 text-slate-300">{tool.description}</p>
+              <p className="mb-5 max-w-xl leading-7 text-slate-300">{tool.description}</p>
+              {tool.highlightText && (
+                <p className="mb-8 max-w-xl font-semibold leading-7 text-[#FFE088]">
+                  {tool.highlightText}
+                </p>
+              )}
               <a
                 href={tool.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#D4AF37] px-6 py-3 font-mono text-sm font-semibold uppercase text-[#0F172A] transition-transform hover:-translate-y-0.5"
+                className="mt-auto inline-flex w-full items-center justify-center gap-2 bg-[#D4AF37] px-6 py-3 text-center font-mono text-sm font-semibold uppercase text-[#0F172A] transition-transform hover:-translate-y-0.5 sm:w-fit"
               >
-                Cuba Sekarang
+                {tool.ctaLabel}
                 <ExternalLink className="h-4 w-4" />
               </a>
             </article>
