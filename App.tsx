@@ -372,14 +372,16 @@ const BusinessHelpCarouselSection: React.FC = () => {
       description: 'Pantau transaksi harian, tuntutan, dan perbelanjaan supaya pemilik perniagaan nampak aliran tunai dengan lebih jelas.',
       icon: <WalletCards className="h-8 w-8" />,
       imageSrc: '/assets/business-help-money-tracking.png',
-      imageAlt: 'Peniaga kecil merekod duit masuk dan keluar menggunakan telefon'
+      imageAlt: 'Peniaga kecil merekod duit masuk dan keluar menggunakan telefon',
+      mobileImagePosition: '68% center'
     },
     {
       title: 'Simpan database pelanggan tanpa perlu risau kehilangan data.',
       description: 'Kumpul dan susun rekod pelanggan secara lebih selamat supaya maklumat penting tidak hilang dalam mesej atau buku nota.',
       icon: <Database className="h-8 w-8" />,
       imageSrc: '/assets/business-help-customer-database.png',
-      imageAlt: 'Sistem database pelanggan yang selamat dan mempunyai backup automatik'
+      imageAlt: 'Sistem database pelanggan yang selamat dan mempunyai backup automatik',
+      mobileImagePosition: '72% center'
     },
     {
       title: 'Automasi email ke pelanggan tentang produk anda.',
@@ -498,6 +500,7 @@ const BusinessHelpCarouselSection: React.FC = () => {
               alt={activeItem.imageAlt}
               loading="lazy"
               decoding="async"
+              style={{ objectPosition: isPinnedScroll ? 'center' : activeItem.mobileImagePosition ?? 'center' }}
               className="absolute inset-0 h-full w-full object-cover object-center transition-opacity duration-300"
             />
           ) : (
@@ -637,9 +640,9 @@ const App: React.FC = () => {
             <Hero />
             <MerchantImpactSection />
             <BusinessHelpCarouselSection />
+            <DemoToolsSection />
             <Services onServiceSelect={navigateToService} />
             <AutomationTransformationSection />
-            <DemoToolsSection />
             <About />
             <Contact />
           </>

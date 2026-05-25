@@ -11,7 +11,7 @@ const Hero: React.FC = () => {
           loading="eager"
           decoding="sync"
           fetchPriority="high"
-          className="h-full w-full object-cover object-[58%_center] md:object-center"
+          className="h-full w-full object-cover object-[72%_center] md:object-center"
         />
         <div className="absolute inset-0 bg-[#0F172A]/45 md:bg-[#0F172A]/25"></div>
         <div className="absolute inset-0 bg-gradient-to-r from-[#0F172A]/90 via-[#0F172A]/65 to-[#0F172A]/35 md:from-[#0F172A]/88 md:via-[#0F172A]/46 md:to-transparent"></div>
