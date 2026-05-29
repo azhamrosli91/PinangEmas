@@ -54,20 +54,28 @@ const Footer: React.FC<FooterProps> = ({ onNavigateToTerms, onNavigateToPrivacy 
             <h4 className="mb-6 font-bold text-white">Undang-undang</h4>
             <ul className="space-y-4 text-sm">
               <li>
-                <button
-                  onClick={onNavigateToPrivacy}
+                <a
+                  href="/privacy"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onNavigateToPrivacy?.();
+                  }}
                   className="text-left transition-colors hover:text-[#FFE088]"
                 >
                   Privasi
-                </button>
+                </a>
               </li>
               <li>
-                <button
-                  onClick={onNavigateToTerms}
+                <a
+                  href="/terms"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onNavigateToTerms?.();
+                  }}
                   className="text-left transition-colors hover:text-[#FFE088]"
                 >
                   Terma & Syarat
-                </button>
+                </a>
               </li>
             </ul>
           </div>

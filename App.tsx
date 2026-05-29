@@ -602,6 +602,28 @@ const App: React.FC = () => {
   const [scrollProgress, setScrollProgress] = useState(0);
   const [showScrollTop, setShowScrollTop] = useState(false);
 
+  const getViewFromPathname = () => {
+    const pathname = window.location.pathname.replace(/\/+$/, '');
+    if (pathname === '/privacy') {
+      return 'privacy' as const;
+    }
+    if (pathname === '/terms') {
+      return 'terms' as const;
+    }
+    return 'home' as const;
+  };
+
+  useEffect(() => {
+    setView(getViewFromPathname());
+
+    const handlePopState = () => {
+      setView(getViewFromPathname());
+    };
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
   useEffect(() => {
     const handleScroll = () => {
       const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
@@ -621,11 +643,18 @@ const App: React.FC = () => {
   const navigateToService = (id: string) => {
     setSelectedServiceId(id);
     setView('service-detail');
+    window.history.pushState({}, '', '/');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const navigateToPath = (nextView: 'home' | 'service-detail' | 'terms' | 'privacy', nextPath: string) => {
+    setView(nextView);
+    window.history.pushState({}, '', nextPath);
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const navigateHome = (sectionId?: string) => {
-    setView('home');
+    navigateToPath('home', '/');
     if (sectionId) {
       setTimeout(() => {
         const element = document.getElementById(sectionId);
@@ -633,8 +662,6 @@ const App: React.FC = () => {
           element.scrollIntoView({ behavior: 'smooth' });
         }
       }, 100);
-    } else {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
   };
 
@@ -684,14 +711,8 @@ const App: React.FC = () => {
       </main>
 
       <Footer
-        onNavigateToTerms={() => {
-          setView('terms');
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }}
-        onNavigateToPrivacy={() => {
-          setView('privacy');
-          window.scrollTo({ top: 0, behavior: 'smooth' });
-        }}
+        onNavigateToTerms={() => navigateToPath('terms', '/terms')}
+        onNavigateToPrivacy={() => navigateToPath('privacy', '/privacy')}
       />
 
       <button
