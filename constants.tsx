@@ -1,4 +1,3 @@
-
 import React from 'react';
 import {
   Code2,
@@ -16,180 +15,180 @@ export const LOGO_URL = '/assets/PinangEmasLogo_1.png';
 export const SERVICES: Service[] = [
   {
     id: 'customize-software',
-    title: 'Customize Software',
-    description: 'Bespoke web design, app development, and large-scale software engineering backed by 14 years of expertise.',
-    longDescription: 'With over 14 years of specialized experience in high-end development, Pinang Emas provides comprehensive digital engineering. From pixel-perfect web design and robust web development to native mobile apps and complex automation workflows, we architect software that scales for both small businesses and massive enterprises.',
+    title: 'Perisian Tersuai',
+    description: 'Reka bentuk web, pembangunan aplikasi dan kejuruteraan perisian berskala besar berasaskan lebih 14 tahun pengalaman.',
+    longDescription: 'Dengan pengalaman khusus lebih 14 tahun dalam pembangunan digital, Pinang Emas menyediakan kejuruteraan digital menyeluruh. Daripada reka bentuk web yang kemas, pembangunan web yang kukuh, aplikasi mudah alih asli hingga aliran automasi kompleks, kami membina perisian yang boleh berkembang untuk perniagaan kecil dan syarikat besar.',
     features: [
-      { title: 'Web Design', description: 'Crafting high-end, visual identities and user interfaces that resonate with luxury and professionalism.' },
-      { title: 'Web Development', description: 'Building high-performance, responsive web applications using modern frameworks like React and Next.js.' },
-      { title: 'Mobile App', description: 'Native and cross-platform mobile solutions for iOS and Android, focusing on seamless user experience.' },
-      { title: 'Database Design', description: 'Architecting robust, scalable, and secure data structures to handle complex business logic and massive datasets.' },
-      { title: 'Automation Workflow', description: 'Engineering custom scripts and internal tools to eliminate manual repetitive tasks and optimize operations.' },
-      { title: 'Windows App Development', description: 'Creating high-performance, native desktop applications for Windows environments, optimized for enterprise utility and stability.' }
+      { title: 'Reka Bentuk Web', description: 'Membina identiti visual dan antara muka pengguna yang profesional, premium dan mudah digunakan.' },
+      { title: 'Pembangunan Web', description: 'Membangunkan aplikasi web responsif berprestasi tinggi menggunakan rangka kerja moden seperti React dan Next.js.' },
+      { title: 'Aplikasi Mudah Alih', description: 'Solusi mudah alih asli dan rentas platform untuk iOS dan Android dengan pengalaman pengguna yang lancar.' },
+      { title: 'Reka Bentuk Pangkalan Data', description: 'Mereka struktur data yang kukuh, selamat dan mudah dikembangkan untuk logik perniagaan serta set data berskala besar.' },
+      { title: 'Aliran Kerja Automasi', description: 'Membangunkan skrip dan alat dalaman tersuai untuk menghapuskan kerja berulang serta mengoptimumkan operasi.' },
+      { title: 'Pembangunan Aplikasi Windows', description: 'Membina aplikasi desktop Windows asli yang pantas, stabil dan sesuai untuk kegunaan perusahaan.' }
     ],
-    benefits: ['14+ Years Technical Excellence', 'Custom UI/UX Design', 'Scalable Architecture', 'Dedicated Project Management'],
+    benefits: ['14+ Tahun Kepakaran Teknikal', 'Reka Bentuk UI/UX Tersuai', 'Seni Bina Boleh Skala', 'Pengurusan Projek Khusus'],
     icon: <Code2 className="w-8 h-8" />
   },
   {
     id: 'ai-solutions',
-    title: 'AI Solutions',
-    description: 'Leveraging next-gen artificial intelligence to automate complex tasks and drive smarter decision making.',
-    longDescription: 'Bring the power of Large Language Models and Machine Learning to your business. We integrate advanced AI to transform how you interact with customers and analyze internal data.',
+    title: 'Solusi AI',
+    description: 'Menggunakan kecerdasan buatan generasi baharu untuk mengautomasikan tugasan kompleks dan membantu keputusan lebih bijak.',
+    longDescription: 'Bawa kuasa Large Language Models dan Machine Learning ke dalam perniagaan anda. Kami mengintegrasikan AI lanjutan untuk mengubah cara anda berinteraksi dengan pelanggan dan menganalisis data dalaman.',
     features: [
-      { title: 'Image Training & Computer Vision', description: 'Development of custom vision models for object detection, classification, and industrial visual inspection.' },
-      { title: 'Predictive Data Science', description: 'Advanced statistical modeling to uncover hidden patterns and forecast business outcomes with high precision.' },
-      { title: 'Automated Data Cleaning', description: 'Systematic transformation of raw, messy data into high-quality training sets for reliable AI inference.' },
-      { title: 'Custom LLM Training', description: 'Fine-tuned AI models that understand your specific industry jargon and organizational knowledge.' }
+      { title: 'Latihan Imej & Computer Vision', description: 'Pembangunan model visual tersuai untuk pengesanan objek, klasifikasi dan pemeriksaan visual industri.' },
+      { title: 'Sains Data Ramalan', description: 'Pemodelan statistik lanjutan untuk mengenal pasti corak tersembunyi dan meramal hasil perniagaan dengan lebih tepat.' },
+      { title: 'Pembersihan Data Automatik', description: 'Transformasi sistematik data mentah dan tidak tersusun menjadi set latihan berkualiti tinggi untuk inferens AI yang boleh dipercayai.' },
+      { title: 'Latihan LLM Tersuai', description: 'Model AI yang ditala khusus untuk memahami istilah industri dan pengetahuan organisasi anda.' }
     ],
-    benefits: ['24/7 Intelligent automation', 'Data-driven decision making', 'Reduced human error'],
+    benefits: ['Automasi Pintar 24/7', 'Keputusan Berasaskan Data', 'Kurangkan Kesilapan Manusia'],
     icon: <BrainCircuit className="w-8 h-8" />
   },
   {
     id: 'n8n-workflow',
-    title: 'n8n Workflow',
-    description: 'Advanced low-code automation that connects your entire tech stack into a unified ecosystem.',
-    longDescription: 'Stop wasting time on repetitive tasks. We use n8n to build powerful, self-hosting automation workflows that bridge the gap between your CRM, Marketing, and Operations tools.',
+    title: 'Aliran Kerja n8n',
+    description: 'Automasi low-code lanjutan yang menghubungkan semua alat digital anda dalam satu ekosistem.',
+    longDescription: 'Hentikan pembaziran masa pada tugasan berulang. Kami menggunakan n8n untuk membina aliran kerja automasi yang berkuasa dan boleh dihos sendiri, menghubungkan CRM, pemasaran dan alat operasi anda.',
     features: [
-      { title: 'Multi-App Sync', description: 'Synchronize data across hundreds of apps in real-time.' },
-      { title: 'Secure 24/7 Managed Hosting', description: 'We host and manage everything for you on our secure, high-performance infrastructure with 24/7 uptime monitoring.' }
+      { title: 'Penyegerakan Pelbagai Aplikasi', description: 'Segerakkan data merentasi ratusan aplikasi secara masa nyata.' },
+      { title: 'Hosting Terurus Selamat 24/7', description: 'Kami hos dan urus semuanya untuk anda di atas infrastruktur selamat berprestasi tinggi dengan pemantauan uptime 24/7.' }
     ],
-    benefits: ['Zero manual data entry', 'Faster lead response times', 'Significant time savings'],
+    benefits: ['Tiada Kemasukan Data Manual', 'Respons Lead Lebih Pantas', 'Penjimatan Masa Ketara'],
     pricing: [
       {
         name: 'Single Spark',
         price: 'RM19',
-        description: '1 simple workflow manual/schedule trigger for reminder, or daily routine.',
-        features: ['1 Workflow', 'Manual/Schedule Trigger', 'Daily Routine Setup', 'Shared cloud hosting 24/7'],
-        period: 'month'
+        description: '1 aliran kerja ringkas dengan pencetus manual atau jadual untuk peringatan atau rutin harian.',
+        features: ['1 Aliran Kerja', 'Pencetus Manual/Jadual', 'Tetapan Rutin Harian', 'Hosting cloud kongsi 24/7'],
+        period: 'bulan'
       },
       {
         name: 'Triple Flow',
         price: 'RM49',
-        description: '2 simple workflows similar to our Single Spark tier + 1 advance daily routine setup.',
+        description: '2 aliran kerja ringkas seperti pakej Single Spark + 1 tetapan rutin harian lanjutan.',
         isPopular: true,
-        features: ['3 Workflows', 'All Single Spark features', 'Integrated logic', 'Shared cloud hosting 24/7'],
-        period: 'month'
+        features: ['3 Aliran Kerja', 'Semua ciri Single Spark', 'Logik bersepadu', 'Hosting cloud kongsi 24/7'],
+        period: 'bulan'
       },
       {
         name: 'Agent Basic',
         price: 'RM79',
-        description: '1 chatbot agent for Telegram, Teams, WhatsApp, Gmail, or Outlook. Excludes AI pricing; requires ChatGPT API / DeepSeek API / Gemini API.',
+        description: '1 agen chatbot untuk Telegram, Teams, WhatsApp, Gmail atau Outlook. Tidak termasuk kos AI; memerlukan ChatGPT API / DeepSeek API / Gemini API.',
         features: [
-          '1 Chatbot Agent',
-          'Multi-Platform Choice',
-          'Automated Notifications',
-          'Requires ChatGPT API / DeepSeek API / Gemini API',
-          'Shared cloud hosting 24/7'
+          '1 Agen Chatbot',
+          'Pilihan Pelbagai Platform',
+          'Notifikasi Automatik',
+          'Memerlukan ChatGPT API / DeepSeek API / Gemini API',
+          'Hosting cloud kongsi 24/7'
         ],
-        period: 'month'
+        period: 'bulan'
       },
       {
         name: 'Agent Pro',
         price: 'RM149',
-        description: '2 chatbot agents similar to Agent Basic for higher volume needs. Excludes AI pricing; requires ChatGPT API / DeepSeek API / Gemini API.',
+        description: '2 agen chatbot seperti Agent Basic untuk keperluan volum lebih tinggi. Tidak termasuk kos AI; memerlukan ChatGPT API / DeepSeek API / Gemini API.',
         features: [
-          '2 Chatbot Agents',
-          'Advanced Routing',
-          'Unified Inbox Logic',
-          'Requires ChatGPT API / DeepSeek API / Gemini API',
-          'Shared cloud hosting 24/7'
+          '2 Agen Chatbot',
+          'Routing Lanjutan',
+          'Logik Inbox Bersepadu',
+          'Memerlukan ChatGPT API / DeepSeek API / Gemini API',
+          'Hosting cloud kongsi 24/7'
         ],
-        period: 'month'
+        period: 'bulan'
       },
       {
         name: 'Agent Enterprise',
         price: 'RM349',
-        description: 'Multiple agents with advanced scheduling and routing for enterprise-grade automation. Excludes AI pricing; requires ChatGPT API / DeepSeek API / Gemini API.',
+        description: 'Pelbagai agen dengan penjadualan dan routing lanjutan untuk automasi tahap perusahaan. Tidak termasuk kos AI; memerlukan ChatGPT API / DeepSeek API / Gemini API.',
         features: [
-          'Multiple Agents',
-          'Multiple Scheduler Triggers',
-          'Daily Routine Setup',
-          'Advanced Routing',
-          'Requires ChatGPT API / DeepSeek API / Gemini API',
-          'Shared cloud hosting 24/7'
+          'Pelbagai Agen',
+          'Pelbagai Pencetus Jadual',
+          'Tetapan Rutin Harian',
+          'Routing Lanjutan',
+          'Memerlukan ChatGPT API / DeepSeek API / Gemini API',
+          'Hosting cloud kongsi 24/7'
         ],
-        period: 'month'
+        period: 'bulan'
       }
     ],
     icon: <Workflow className="w-8 h-8" />
   },
   {
     id: 'hrms-system',
-    title: 'HRMS System',
-    description: 'The definitive HR solution for Malaysian companies. Completely free for unlimited employees.',
-    longDescription: 'Designed specifically for the Malaysian business ecosystem, our HRMS provides a comprehensive suite of tools to manage your workforce. From payroll compliance to project planning, we offer enterprise-grade modules including Employee Management, Leave & Attendance, Recruitment, Training, Performance Appraisal, Payroll, and integrated Project Management tools—all at zero cost for unlimited employees.',
+    title: 'Sistem HRMS',
+    description: 'Solusi HR lengkap untuk syarikat Malaysia. Percuma sepenuhnya untuk jumlah pekerja tanpa had.',
+    longDescription: 'Direka khusus untuk ekosistem perniagaan Malaysia, HRMS kami menyediakan set alat lengkap untuk mengurus tenaga kerja anda. Daripada pematuhan gaji hingga perancangan projek, kami menawarkan modul tahap perusahaan termasuk Pengurusan Pekerja, Cuti & Kehadiran, Pengambilan, Latihan, Penilaian Prestasi, Gaji dan alat Pengurusan Projek bersepadu, semuanya tanpa kos untuk jumlah pekerja tanpa had.',
     features: [
-      { title: 'Employee Management', description: 'Centralized digital profiles with document storage, family details, and employment history.' },
-      { title: 'Leave & Attendance', description: 'Sophisticated leave application workflows with geo-fenced attendance tracking and shift management.' },
-      { title: 'Payroll & Statutory', description: 'Automated calculations with full LHDN, EPF, SOCSO, and EIS compliance for Malaysian companies.' },
-      { title: 'Recruitment & Training', description: 'End-to-end talent acquisition pipeline and employee skill development tracking.' },
-      { title: 'Appraisal & Performance', description: 'Structured performance reviews, KPI tracking, and 360-degree feedback systems.' },
-      { title: 'Project Management & Planner', description: 'Integrated Kanban boards (Planner) and project tracking to align HR with operations.' }
+      { title: 'Pengurusan Pekerja', description: 'Profil digital berpusat dengan simpanan dokumen, maklumat keluarga dan sejarah pekerjaan.' },
+      { title: 'Cuti & Kehadiran', description: 'Aliran permohonan cuti yang tersusun dengan rekod kehadiran geo-fenced dan pengurusan syif.' },
+      { title: 'Gaji & Berkanun', description: 'Pengiraan automatik dengan pematuhan LHDN, KWSP, PERKESO dan EIS untuk syarikat Malaysia.' },
+      { title: 'Pengambilan & Latihan', description: 'Saluran pengambilan bakat hujung ke hujung dan penjejakan pembangunan kemahiran pekerja.' },
+      { title: 'Penilaian & Prestasi', description: 'Semakan prestasi berstruktur, penjejakan KPI dan sistem maklum balas 360 darjah.' },
+      { title: 'Pengurusan Projek & Planner', description: 'Papan Kanban bersepadu dan penjejakan projek untuk menyelaraskan HR dengan operasi.' }
     ],
-    benefits: ['100% Free Forever', 'Unlimited Employee Support', 'Malaysian Statutory Compliance', 'All-in-One Integrated Modules'],
+    benefits: ['100% Percuma Selamanya', 'Sokongan Pekerja Tanpa Had', 'Pematuhan Berkanun Malaysia', 'Modul Bersepadu Semua-dalam-Satu'],
     pricing: [
       {
-        name: 'Forever Free',
+        name: 'Percuma Selamanya',
         price: 'RM0',
-        description: 'No hidden fees. No credit card required. Register and start managing your team today.',
+        description: 'Tiada caj tersembunyi. Tiada kad kredit diperlukan. Daftar dan mula urus pasukan anda hari ini.',
         isPopular: true,
         features: [
-          'Unlimited Employees',
-          'Leave & Claim Management',
-          'Recruitment & Payroll',
+          'Pekerja Tanpa Had',
+          'Pengurusan Cuti & Tuntutan',
+          'Pengambilan & Gaji',
           'Planner (Kanban)',
-          'Appraisal & Training'
+          'Penilaian & Latihan'
         ],
-        period: 'month'
+        period: 'bulan'
       }
     ],
     icon: <Users className="w-8 h-8" />
   },
   {
     id: 'hosting-website',
-    title: 'Affordable Hosting',
-    description: 'Budget-friendly, high-performance hosting solutions specifically optimized for small SME businesses.',
-    longDescription: 'We understand that SMEs need reliable digital homes without breaking the bank. Our affordable hosting solutions provide local speeds, robust security, and the reliability your business deserves.',
+    title: 'Hosting Mampu Milik',
+    description: 'Solusi hosting berprestasi tinggi dan mesra bajet, dioptimumkan khusus untuk perniagaan SME kecil.',
+    longDescription: 'Kami faham SME memerlukan rumah digital yang boleh dipercayai tanpa kos melampau. Solusi hosting mampu milik kami menyediakan kelajuan tempatan, keselamatan kukuh dan kestabilan yang diperlukan perniagaan anda.',
     features: [
-      { title: 'NVMe SSD Storage', description: 'Experience up to 10x faster data access speeds compared to traditional SSDs for lightning-fast page loads.' },
-      { title: 'Local MY Peering', description: 'Our servers are peered locally in Malaysia to ensure the lowest possible latency for your domestic customers.' },
-      { title: '99.9% Uptime SLA', description: 'Enterprise-grade reliability with redundant power and cooling systems to keep your business online 24/7.' },
-      { title: 'Automated Backups', description: 'Daily off-site backups ensure your website data is always safe and restorable with a single click.' },
-      { title: 'Free SSL (Let\'s Encrypt)', description: 'Industry-standard encryption automatically provisioned for every domain to protect user data and boost SEO.' },
-      { title: 'One-Click Deploy', description: 'Instantly install WordPress, Joomla, or custom Node.js apps via our intuitive control panel.' }
+      { title: 'Storan NVMe SSD', description: 'Nikmati akses data sehingga 10x lebih pantas berbanding SSD tradisional untuk muatan halaman yang sangat laju.' },
+      { title: 'Peering Tempatan MY', description: 'Pelayan kami dihubungkan secara tempatan di Malaysia untuk latensi serendah mungkin kepada pelanggan domestik anda.' },
+      { title: 'SLA Uptime 99.9%', description: 'Kestabilan tahap perusahaan dengan sistem kuasa dan penyejukan redundan supaya perniagaan anda kekal online 24/7.' },
+      { title: 'Backup Automatik', description: 'Backup harian di luar tapak memastikan data laman web anda sentiasa selamat dan boleh dipulihkan dengan mudah.' },
+      { title: 'SSL Percuma (Let\'s Encrypt)', description: 'Enkripsi standard industri disediakan secara automatik untuk setiap domain bagi melindungi data pengguna dan meningkatkan SEO.' },
+      { title: 'Deploy Satu Klik', description: 'Pasang WordPress, Joomla atau aplikasi Node.js tersuai dengan segera melalui panel kawalan yang mudah digunakan.' }
     ],
-    benefits: ['Affordable Pricing', '99.9% Uptime', 'Daily Backups', 'One-Click WP Installs'],
+    benefits: ['Harga Mampu Milik', 'Uptime 99.9%', 'Backup Harian', 'Pemasangan WP Satu Klik'],
     pricing: [
       {
         name: 'SME Starter',
         price: 'RM19',
-        description: 'Hosted locally in Malaysia for extreme speed. The most cost-effective solution for small businesses looking for stable performance.',
+        description: 'Dihos secara tempatan di Malaysia untuk kelajuan tinggi. Solusi paling kos efektif untuk perniagaan kecil yang mahukan prestasi stabil.',
         isPopular: true,
         features: [
           '4GB RAM',
           '2 CPU Cores',
-          '10GB Dedicated Memory',
-          '1TB Network Transfer',
-          'Shared Bandwidth'
+          '10GB Memori Khusus',
+          '1TB Pemindahan Rangkaian',
+          'Bandwidth Kongsi'
         ],
-        period: 'month'
+        period: 'bulan'
       }
     ],
     icon: <Globe className="w-8 h-8" />
   },
   {
     id: 'smart-home-office',
-    title: 'Smart Home/Office',
-    description: 'Next-level IoT integration to automate your living and working environments.',
-    longDescription: 'Step into the future with intelligent environmental controls. We automate lighting, security, and climate to create spaces that react to your presence.',
+    title: 'Rumah/Pejabat Pintar',
+    description: 'Integrasi IoT tahap seterusnya untuk mengautomasikan ruang kediaman dan tempat kerja anda.',
+    longDescription: 'Masuk ke masa hadapan dengan kawalan persekitaran pintar. Kami mengautomasikan lampu, keselamatan dan suhu untuk mencipta ruang yang bertindak balas terhadap kehadiran anda.',
     features: [
-      { title: 'Tuya Ecosystem', description: 'Complete integration with Tuya-powered devices for a massive range of compatible smart hardware.' },
-      { title: 'Voice Assistant Control', description: 'Hands-free operation through seamless Google Assistant and Amazon Alexa voice commands.' },
-      { title: 'Aqara & Xiaomi Integration', description: 'Ultra-reliable Zigbee-based sensors and hubs from Aqara/Xiaomi for robust stability.' },
-      { title: 'Unified Smart Dashboard', description: 'Control lighting, climate, and security from a single, intuitive interface synchronized across all devices.' },
-      { title: 'Scene Automation', description: 'Intelligent routines that react to your presence, the time of day, or environmental changes automatically.' }
+      { title: 'Ekosistem Tuya', description: 'Integrasi lengkap dengan peranti berasaskan Tuya untuk rangkaian perkakasan pintar yang luas dan serasi.' },
+      { title: 'Kawalan Pembantu Suara', description: 'Operasi tanpa tangan melalui arahan suara Google Assistant dan Amazon Alexa yang lancar.' },
+      { title: 'Integrasi Aqara & Xiaomi', description: 'Sensor dan hub Zigbee daripada Aqara/Xiaomi yang sangat stabil dan boleh dipercayai.' },
+      { title: 'Dashboard Pintar Bersepadu', description: 'Kawal lampu, suhu dan keselamatan daripada satu antara muka intuitif yang disegerakkan merentas semua peranti.' },
+      { title: 'Automasi Senario', description: 'Rutin pintar yang bertindak balas secara automatik kepada kehadiran, masa atau perubahan persekitaran.' }
     ],
-    benefits: ['Enhanced security', 'Energy cost savings', 'Unmatched convenience'],
+    benefits: ['Keselamatan Dipertingkat', 'Penjimatan Kos Tenaga', 'Kemudahan Maksimum'],
     icon: <Home className="w-8 h-8" />
   }
 ];
@@ -198,25 +197,25 @@ export const TESTIMONIALS: Testimonial[] = [
   {
     id: '1',
     name: 'Aina Sofiah',
-    role: 'HR Manager',
+    role: 'Pengurus HR',
     company: 'Nexus Tech',
-    content: 'Pinang Emas delivered a custom HRMS that revolutionized how we manage 100+ employees. Their attention to detail is truly gold standard.',
+    content: 'Pinang Emas membangunkan HRMS tersuai yang mengubah cara kami mengurus lebih 100 pekerja. Ketelitian mereka benar-benar bertaraf emas.',
     avatar: '/assets/ainsofiah.png'
   },
   {
     id: '2',
     name: 'Sharon Yeap',
-    role: 'CEO',
+    role: 'Ketua Pegawai Eksekutif',
     company: 'Skyline Logistics',
-    content: 'The n8n automation workflows they implemented saved us over 20 hours of manual work every single week. Incredible efficiency.',
+    content: 'Aliran automasi n8n yang mereka laksanakan menjimatkan lebih 20 jam kerja manual kami setiap minggu. Kecekapannya sangat ketara.',
     avatar: '/assets/sharonyeap.webp'
   },
   {
     id: '3',
     name: 'Siti Maryam',
-    role: 'Founder',
+    role: 'Pengasas',
     company: 'Bloom Retail',
-    content: 'Our AI-powered customer service bot from Pinang Emas handles 80% of inquiries instantly. A game changer for our brand.',
+    content: 'Bot khidmat pelanggan berkuasa AI daripada Pinang Emas mengendalikan 80% pertanyaan dengan segera. Ia benar-benar mengubah operasi jenama kami.',
     avatar: '/assets/sitimaryam.png'
   }
 ];

@@ -8,7 +8,7 @@ const ChatBot: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState('');
   const [messages, setMessages] = useState<{ role: 'user' | 'bot'; text: string }[]>([
-    { role: 'bot', text: 'Selamat Sejahtera! I am Emas AI, your technical consultant. How can I help you elevate your business today?' }
+    { role: 'bot', text: 'Selamat sejahtera! Saya Emas AI, konsultan teknikal anda. Bagaimana saya boleh membantu perniagaan anda hari ini?' }
   ]);
   const [isLoading, setIsLoading] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -33,18 +33,18 @@ const ChatBot: React.FC = () => {
     try {
       const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
       const systemInstruction = `
-        You are Emas AI, a professional technical consultant for Pinang Emas, a premium IT software company in Malaysia.
-        Your tone is professional, expert, helpful, and slightly premium.
+        Anda ialah Emas AI, konsultan teknikal profesional untuk Pinang Emas, sebuah syarikat perisian IT premium di Malaysia.
+        Jawab dalam Bahasa Melayu kecuali pengguna meminta bahasa lain. Nada anda profesional, pakar, membantu dan sedikit premium.
         
-        DYNAMIC SERVICE KNOWLEDGE:
-        Your understanding of our capabilities is dynamic and strictly reflects the current services offered by Pinang Emas as defined in our official company records.
-        The current verified services are: ${SERVICES.map(s => s.title).join(', ')}.
+        PENGETAHUAN PERKHIDMATAN DINAMIK:
+        Pemahaman anda tentang keupayaan kami mestilah berdasarkan perkhidmatan semasa Pinang Emas seperti dalam rekod rasmi syarikat.
+        Perkhidmatan semasa yang disahkan ialah: ${SERVICES.map(s => s.title).join(', ')}.
         
-        Key focus points:
-        - We specialize in Custom Software, AI Solutions, and n8n Workflows.
-        - We have 7+ years of technical excellence in the Malaysian market.
-        - Always encourage users to "Get a Quote" or "Contact Us" for their specific project requirements.
-        - Keep your responses concise, intelligent, and highly informative.
+        Fokus utama:
+        - Kami pakar dalam Perisian Tersuai, Solusi AI dan Aliran Kerja n8n.
+        - Kami mempunyai lebih 7 tahun kecemerlangan teknikal dalam pasaran Malaysia.
+        - Galakkan pengguna mendapatkan sebut harga atau menghubungi kami untuk keperluan projek khusus.
+        - Pastikan jawapan ringkas, bijak dan sangat bermaklumat.
       `;
 
       const history = messages.map(m => ({
@@ -61,11 +61,11 @@ const ChatBot: React.FC = () => {
         },
       });
 
-      const botResponse = response.text || "I apologize, I'm having trouble processing that. Please try again or contact our sales team directly.";
+      const botResponse = response.text || 'Maaf, saya menghadapi masalah memproses permintaan itu. Sila cuba lagi atau hubungi pasukan jualan kami terus.';
       setMessages(prev => [...prev, { role: 'bot', text: botResponse }]);
     } catch (error) {
       console.error('Chat Error:', error);
-      setMessages(prev => [...prev, { role: 'bot', text: "Forgive me, my neural links are briefly interrupted. Please try again in a moment." }]);
+      setMessages(prev => [...prev, { role: 'bot', text: 'Maaf, sambungan AI saya terganggu sebentar. Sila cuba lagi sebentar lagi.' }]);
     } finally {
       setIsLoading(false);
     }
@@ -89,7 +89,7 @@ const ChatBot: React.FC = () => {
               <p className="font-black text-sm uppercase tracking-wider">Emas AI</p>
               <div className="flex items-center text-[10px] font-bold opacity-70">
                 <span className="w-1.5 h-1.5 bg-green-600 rounded-full mr-1.5 animate-pulse"></span>
-                Active Consultant
+                Konsultan Aktif
               </div>
             </div>
           </div>
@@ -145,7 +145,7 @@ const ChatBot: React.FC = () => {
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="Ask about our services..."
+              placeholder="Tanya tentang perkhidmatan kami..."
               className="w-full bg-white/5 border border-white/10 rounded-xl py-3 pl-4 pr-12 text-sm focus:border-[#AA771C] outline-none transition-colors"
             />
             <button 
@@ -158,7 +158,7 @@ const ChatBot: React.FC = () => {
           </div>
           <p className="text-[9px] text-center text-white/20 mt-3 flex items-center justify-center">
             <Sparkles size={10} className="mr-1" />
-            Powered by Gemini 3 Flash
+            Dikuasakan oleh Gemini 3 Flash
           </p>
         </form>
       </div>

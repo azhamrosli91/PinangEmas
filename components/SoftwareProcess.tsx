@@ -5,36 +5,36 @@ import { Search, Code2, ShieldCheck, Rocket, ChevronRight } from 'lucide-react';
 const SoftwareProcess: React.FC = () => {
     const steps = [
         {
-            title: 'Discovery & Strategy',
-            description: 'We dive deep into your business DNA to identify pain points and architect a solution that drives actual ROI.',
+            title: 'Penemuan & Strategi',
+            description: 'Kami memahami operasi perniagaan anda secara mendalam untuk mengenal pasti masalah dan membina solusi yang memberi pulangan sebenar.',
             icon: <Search className="w-6 h-6" />,
-            tag: 'Step 01'
+            tag: 'Langkah 01'
         },
         {
-            title: 'Architecture & UX',
-            description: 'Beyond aesthetics, we design the "engine" and the journey. High-performance databases meet intuitive interfaces.',
+            title: 'Seni Bina & UX',
+            description: 'Bukan sekadar visual, kami mereka enjin sistem dan perjalanan pengguna. Pangkalan data berprestasi tinggi digabungkan dengan antara muka intuitif.',
             icon: <Code2 className="w-6 h-6" />,
-            tag: 'Step 02'
+            tag: 'Langkah 02'
         },
         {
-            title: 'Agile Engineering',
-            description: 'Clean code, rigorous testing, and continuous feedback. We build your software in transparent, iterative sprints.',
+            title: 'Kejuruteraan Tangkas',
+            description: 'Kod bersih, semakan teliti dan maklum balas berterusan. Kami membina perisian anda melalui sprint yang telus dan berulang.',
             icon: <ShieldCheck className="w-6 h-6" />,
-            tag: 'Step 03'
+            tag: 'Langkah 03'
         },
         {
-            title: 'Launch & Evolution',
-            description: 'Post-deployment isn\'t the end. We monitor, optimize, and scale your platform as your user base grows.',
+            title: 'Pelancaran & Evolusi',
+            description: 'Selepas deployment bukan penamat. Kami memantau, mengoptimumkan dan mengembangkan platform anda apabila pengguna bertambah.',
             icon: <Rocket className="w-6 h-6" />,
-            tag: 'Step 04'
+            tag: 'Langkah 04'
         }
     ];
 
     return (
         <div className="py-24 border-t border-[#AA771C]/10">
             <div className="text-center mb-20">
-                <h4 className="text-gold text-xs font-black uppercase tracking-[0.4em] mb-4">Our Methodology</h4>
-                <h2 className="text-3xl md:text-5xl font-black text-[#101010]">How We <span className="text-gold italic">Engineer</span> Success</h2>
+                <h4 className="text-gold text-xs font-black uppercase tracking-[0.4em] mb-4">Metodologi Kami</h4>
+                <h2 className="text-3xl md:text-5xl font-black text-[#101010]">Cara Kami <span className="text-gold italic">Membina</span> Kejayaan</h2>
             </div>
 
             <div className="relative">

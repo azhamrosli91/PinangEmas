@@ -5,23 +5,23 @@ import { Target, Cpu, Users, Award, CheckCircle2 } from 'lucide-react';
 const SoftwareWhyChooseUs: React.FC = () => {
     const points = [
         {
-            title: '14+ Years Expertise',
-            description: 'We aren\'t newcomers. We\'ve navigated the evolution of the web for over a decade, building everything from static sites to massive AI engines.',
+            title: '14+ Tahun Kepakaran',
+            description: 'Kami bukan pendatang baharu. Kami mengikuti evolusi web lebih sedekad, daripada laman statik hingga enjin AI berskala besar.',
             icon: <Award className="w-8 h-8" />
         },
         {
-            title: 'Full-Stack Authority',
-            description: 'We own the entire stack. From React/Vue frontends to Node/Python backends and cloud-native Devops, your project is in elite hands.',
+            title: 'Kepakaran Full-Stack',
+            description: 'Kami menguasai keseluruhan stack. Daripada frontend React/Vue hingga backend Node/Python dan DevOps cloud-native, projek anda dikendalikan oleh pasukan berpengalaman.',
             icon: <Cpu className="w-8 h-8" />
         },
         {
-            title: 'Bespoke Architecture',
-            description: 'We don\'t use templates. Every line of code is written to solve your specific technical challenges and business objectives.',
+            title: 'Seni Bina Tersuai',
+            description: 'Kami tidak bergantung pada templat. Setiap baris kod ditulis untuk menyelesaikan cabaran teknikal dan objektif perniagaan anda.',
             icon: <Target className="w-8 h-8" />
         },
         {
-            title: 'Partner, Not Vendor',
-            description: 'We act as an extension of your own engineering team, providing strategic consulting alongside technical execution.',
+            title: 'Rakan Strategik, Bukan Sekadar Pembekal',
+            description: 'Kami bertindak sebagai lanjutan kepada pasukan teknikal anda, menyediakan nasihat strategik bersama pelaksanaan teknikal.',
             icon: <Users className="w-8 h-8" />
         }
     ];
@@ -31,13 +31,13 @@ const SoftwareWhyChooseUs: React.FC = () => {
             <div className="container mx-auto px-6">
                 <div className="flex flex-col lg:flex-row gap-16 items-center">
                     <div className="lg:w-1/3">
-                        <h4 className="text-gold text-xs font-black uppercase tracking-[0.4em] mb-4">The Competitive Edge</h4>
-                        <h2 className="text-4xl md:text-5xl font-black text-[#101010] mb-8">Why Innovators <br /><span className="text-gold italic">Select Us.</span></h2>
+                        <h4 className="text-gold text-xs font-black uppercase tracking-[0.4em] mb-4">Kelebihan Daya Saing</h4>
+                        <h2 className="text-4xl md:text-5xl font-black text-[#101010] mb-8">Mengapa Inovator <br /><span className="text-gold italic">Memilih Kami.</span></h2>
                         <p className="text-[#101010]/70 text-lg leading-relaxed mb-10">
-                            When standard software isn't enough, companies turn to Pinang Emas for engineering that defines industries.
+                            Apabila perisian biasa tidak mencukupi, syarikat memilih Pinang Emas untuk kejuruteraan yang benar-benar menyokong operasi mereka.
                         </p>
                         <div className="space-y-4">
-                            {['Guaranteed Code Ownership', 'No Hidden Licensing Fees', '24/7 Security Monitoring'].map((item, idx) => (
+                            {['Pemilikan Kod Dijamin', 'Tiada Yuran Lesen Tersembunyi', 'Pemantauan Keselamatan 24/7'].map((item, idx) => (
                                 <div key={idx} className="flex items-center space-x-3 text-[#101010]/80 font-bold">
                                     <CheckCircle2 className="w-5 h-5 text-gold shrink-0" />
                                     <span>{item}</span>

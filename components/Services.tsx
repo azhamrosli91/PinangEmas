@@ -9,13 +9,15 @@ interface ServicesProps {
 
 const serviceDisplayCopy: Record<string, { title?: string; description: string }> = {
   'customize-software': {
-    title: 'Custom Software',
+    title: 'Perisian Tersuai',
     description: 'Pembangunan perisian khas mengikut keperluan unik perniagaan anda.'
   },
   'ai-solutions': {
+    title: 'Solusi AI',
     description: 'Solusi AI praktikal untuk automasi sokongan pelanggan, data, dan operasi harian.'
   },
   'n8n-workflow': {
+    title: 'Aliran Kerja n8n',
     description: 'Automasi aliran kerja yang kompleks merentasi pelbagai aplikasi tanpa kod.'
   },
   'hrms-system': {
@@ -23,10 +25,11 @@ const serviceDisplayCopy: Record<string, { title?: string; description: string }
     description: 'Sistem pengurusan sumber manusia yang dioptimumkan untuk standard Malaysia.'
   },
   'hosting-website': {
-    title: 'Hosting SME',
+    title: 'Hosting PKS',
     description: 'Hosting mampu milik dan pantas untuk laman web serta aplikasi perniagaan kecil.'
   },
   'smart-home-office': {
+    title: 'Rumah/Pejabat Pintar',
     description: 'Automasi ruang rumah dan pejabat dengan kawalan pintar, sensor, dan integrasi IoT.'
   }
 };

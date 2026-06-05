@@ -6,17 +6,17 @@ const SmartHomeEcosystems: React.FC = () => {
     const ecosystems = [
         {
             name: 'Tuya Smart',
-            description: 'The world\'s most flexible IoT platform, supporting over 90,000 different smart product categories.',
+            description: 'Platform IoT yang sangat fleksibel, menyokong lebih 90,000 kategori produk pintar.',
             icon: <Zap className="w-6 h-6 text-orange-400" />
         },
         {
             name: 'Google & Alexa',
-            description: 'Voice-first living. Command your entire environment using natural language through Assistant or Alexa.',
+            description: 'Gaya hidup berasaskan suara. Kawal seluruh persekitaran menggunakan bahasa semula jadi melalui Assistant atau Alexa.',
             icon: <Mic className="w-6 h-6 text-blue-400" />
         },
         {
             name: 'Xiaomi & Aqara',
-            description: 'High-precision Zigbee sensors that provide industry-leading stability and exceptional battery life.',
+            description: 'Sensor Zigbee berketepatan tinggi yang menawarkan kestabilan kukuh dan hayat bateri yang panjang.',
             icon: <ShieldCheck className="w-6 h-6 text-emerald-400" />
         }
     ];
@@ -26,14 +26,14 @@ const SmartHomeEcosystems: React.FC = () => {
             <div className="container mx-auto px-6">
                 <div className="flex flex-col lg:flex-row gap-20 items-center">
                     <div className="lg:w-1/2">
-                        <h4 className="text-gold text-xs font-black uppercase tracking-[0.4em] mb-4">The Unified Ecosystem</h4>
-                        <h2 className="text-4xl md:text-6xl font-black text-[#101010] mb-8">Best-in-Class <br /><span className="text-gold italic">Integrations.</span></h2>
+                        <h4 className="text-gold text-xs font-black uppercase tracking-[0.4em] mb-4">Ekosistem Bersepadu</h4>
+                        <h2 className="text-4xl md:text-6xl font-black text-[#101010] mb-8">Integrasi <br /><span className="text-gold italic">Terbaik.</span></h2>
                         <p className="text-[#101010]/70 text-lg leading-relaxed mb-10 max-w-xl">
-                            We don't believe in closed systems. We architect smart environments that combine the best hardware from Tuya, Google, Amazon, and Xiaomi into one seamless experience.
+                            Kami tidak membina sistem tertutup. Kami mereka persekitaran pintar yang menggabungkan perkakasan terbaik daripada Tuya, Google, Amazon dan Xiaomi dalam satu pengalaman lancar.
                         </p>
 
                         <div className="grid grid-cols-2 gap-4">
-                            {['App Control', 'Voice Control', 'Sensor Logic', 'Energy Stats'].map((tag, i) => (
+                            {['Kawalan Aplikasi', 'Kawalan Suara', 'Logik Sensor', 'Statistik Tenaga'].map((tag, i) => (
                                 <div key={i} className="flex items-center space-x-3 px-6 py-4 rounded-2xl bg-[#F8F2DF] border border-[#AA771C]/20 group hover:border-gold/30 transition-all duration-300">
                                     <div className="w-2 h-2 rounded-full bg-gold shadow-[0_0_8px_rgba(170,119,28,0.5)]"></div>
                                     <span className="text-[#101010] font-bold text-sm tracking-tight">{tag}</span>

@@ -81,7 +81,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigateToTerms, onNavigateToPrivacy 
           </div>
 
           <div>
-            <h4 className="mb-6 font-bold text-white">Langgan Newsletter</h4>
+            <h4 className="mb-6 font-bold text-white">Langgan Buletin</h4>
             <p className="mb-4 text-sm leading-6">Dapatkan tips automasi terus ke inbox anda.</p>
             <form className="flex" onSubmit={(e) => e.preventDefault()}>
               <input
@@ -91,7 +91,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigateToTerms, onNavigateToPrivacy 
               />
               <button
                 type="submit"
-                aria-label="Langgan newsletter"
+                aria-label="Langgan buletin"
                 className="flex w-12 items-center justify-center bg-[#D4AF37] text-[#0F172A]"
               >
                 <ArrowRight className="h-4 w-4" />
@@ -102,7 +102,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigateToTerms, onNavigateToPrivacy 
 
         <div className="flex flex-col items-center justify-between gap-4 border-t border-white/5 pt-8 text-xs md:flex-row">
           <p>&copy; {new Date().getFullYear()} Pinang Emas. Hak Cipta Terpelihara.</p>
-          <p className="font-mono uppercase">Malaysia Based Consultancy</p>
+          <p className="font-mono uppercase">Konsultansi Berpangkalan di Malaysia</p>
         </div>
       </div>
     </footer>

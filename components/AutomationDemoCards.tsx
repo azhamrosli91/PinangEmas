@@ -4,35 +4,35 @@ import { Mail, MessageSquare, Database, Users, FileText, ArrowRight, Bot, Zap, G
 const AutomationDemoCards: React.FC = () => {
     const demos = [
         {
-            badge: 'Lead Generation',
-            title: 'Global Client Intake',
-            flow: 'Website → CRM → WhatsApp',
+            badge: 'Penjanaan Lead',
+            title: 'Kemasukan Pelanggan Global',
+            flow: 'Laman Web -> CRM -> WhatsApp',
             steps: [
-                { icon: <Globe className="w-4 h-4 text-blue-400" />, text: 'Lead enters from landing page' },
-                { icon: <Database className="w-4 h-4 text-emerald-400" />, text: 'AI filters & updates HubSpot/CRM' },
-                { icon: <MessageSquare className="w-4 h-4 text-green-500" />, text: 'Instant WhatsApp notification' }
+                { icon: <Globe className="w-4 h-4 text-blue-400" />, text: 'Lead masuk daripada landing page' },
+                { icon: <Database className="w-4 h-4 text-emerald-400" />, text: 'AI menapis dan mengemas kini HubSpot/CRM' },
+                { icon: <MessageSquare className="w-4 h-4 text-green-500" />, text: 'Notifikasi WhatsApp segera' }
             ],
             icon: <Zap className="w-8 h-8 text-gold" />
         },
         {
-            badge: 'FinOps & Billing',
-            title: 'Automated Invoicing',
-            flow: 'Xero → Customer → Archive',
+            badge: 'FinOps & Bil',
+            title: 'Invois Automatik',
+            flow: 'Xero -> Pelanggan -> Arkib',
             steps: [
-                { icon: <FileText className="w-4 h-4 text-gold" />, text: 'New invoice generated in Xero' },
-                { icon: <Mail className="w-4 h-4 text-blue-300" />, text: 'Branded email sent to client' },
-                { icon: <Archive className="w-4 h-4 text-[#101010]/70" />, text: 'Copy saved to Internal G-Drive' }
+                { icon: <FileText className="w-4 h-4 text-gold" />, text: 'Invois baharu dijana dalam Xero' },
+                { icon: <Mail className="w-4 h-4 text-blue-300" />, text: 'Emel berjenama dihantar kepada pelanggan' },
+                { icon: <Archive className="w-4 h-4 text-[#101010]/70" />, text: 'Salinan disimpan ke G-Drive dalaman' }
             ],
             icon: <FileText className="w-8 h-8 text-gold" />
         },
         {
-            badge: 'AI Support',
-            title: 'Smart Ticket Routing',
-            flow: 'Email → AI Summary → Slack',
+            badge: 'Sokongan AI',
+            title: 'Routing Tiket Pintar',
+            flow: 'Emel -> Ringkasan AI -> Slack',
             steps: [
-                { icon: <Mail className="w-4 h-4 text-red-400" />, text: 'Support ticket received' },
-                { icon: <Bot className="w-4 h-4 text-purple-400" />, text: 'AI summarizes & prioritizes' },
-                { icon: <Users className="w-4 h-4 text-emerald-400" />, text: 'Routed to correct Slack team' }
+                { icon: <Mail className="w-4 h-4 text-red-400" />, text: 'Tiket sokongan diterima' },
+                { icon: <Bot className="w-4 h-4 text-purple-400" />, text: 'AI meringkas dan menetapkan keutamaan' },
+                { icon: <Users className="w-4 h-4 text-emerald-400" />, text: 'Dihantar kepada pasukan Slack yang betul' }
             ],
             icon: <Bot className="w-8 h-8 text-gold" />
         }
@@ -41,8 +41,8 @@ const AutomationDemoCards: React.FC = () => {
     return (
         <div className="mt-24">
             <div className="text-center mb-16">
-                <h3 className="text-[#101010] font-black text-3xl md:text-4xl mb-6">Proven <span className="text-gold italic">Automation</span> Blueprints</h3>
-                <p className="text-[#101010]/70 max-w-2xl mx-auto">Explore some of our most requested high-performance workflows across different industries.</p>
+                <h3 className="text-[#101010] font-black text-3xl md:text-4xl mb-6">Blueprint <span className="text-gold italic">Automasi</span> Terbukti</h3>
+                <p className="text-[#101010]/70 max-w-2xl mx-auto">Lihat beberapa aliran kerja berprestasi tinggi yang paling kerap diminta merentas pelbagai industri.</p>
             </div>
 
             <div className="grid md:grid-cols-3 gap-8 max-w-[1200px] mx-auto">
@@ -77,11 +77,11 @@ const AutomationDemoCards: React.FC = () => {
                             </div>
 
                             <div className="mt-10 pt-8 border-t border-[#AA771C]/10 flex items-center justify-between">
-                                <span className="text-[10px] text-[#101010]/55 uppercase font-black">Live Deployment Ready</span>
+                                <span className="text-[10px] text-[#101010]/55 uppercase font-black">Sedia Untuk Deployment</span>
                                 <div className="flex -space-x-2">
                                     {[1, 2, 3].map(i => (
                                         <div key={i} className="w-6 h-6 rounded-full border border-dark-bg bg-[#AA771C]/10 overflow-hidden">
-                                            <img src={`https://i.pravatar.cc/100?img=${i + 10}`} alt="User" />
+                                            <img src={`https://i.pravatar.cc/100?img=${i + 10}`} alt="Pengguna" />
                                         </div>
                                     ))}
                                 </div>

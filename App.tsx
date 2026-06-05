@@ -19,9 +19,13 @@ import {
   ChevronUp,
   Database,
   ExternalLink,
+  Handshake,
+  Landmark,
   MailCheck,
   Megaphone,
   ReceiptText,
+  UserPlus,
+  Users,
   WalletCards
 } from 'lucide-react';
 
@@ -53,7 +57,7 @@ const automationShowcaseItems: AutomationShowcaseItem[] = [
     label: 'Pemantauan Masa Nyata',
     eyebrow: 'Pemantauan Masa Nyata',
     title: 'Pantau Semua Dalam Masa Nyata',
-    description: 'Dapatkan data, laporan dan analitik secara real-time untuk buat keputusan lebih pantas dan tepat.',
+    description: 'Dapatkan data, laporan dan analitik secara masa nyata untuk buat keputusan lebih pantas dan tepat.',
     visual: 'analytics'
   },
   {
@@ -360,7 +364,7 @@ const MerchantImpactSection: React.FC = () => {
     <section id="impact" className="scroll-mt-20 bg-white py-16 md:py-20">
       <div className="mx-auto max-w-[1280px] px-4 md:px-6">
         <p className="mx-auto mb-12 max-w-5xl text-center text-3xl font-extrabold leading-tight text-[#0F172A] md:text-5xl md:leading-tight">
-          Berjaya membantu <span className="text-[#B88712]">4,549 Peniaga Kecil</span>. Membangunkan ekosistem peniagaan pintar, dan meningkatkan hasil jualan perniaga kecil dengan automasi pintar.
+          Berjaya membantu <span className="text-[#B88712]">4,549 Peniaga Kecil</span>. Membangunkan ekosistem perniagaan pintar, dan meningkatkan hasil jualan peniaga kecil dengan automasi pintar.
         </p>
       </div>
       <img
@@ -374,6 +378,65 @@ const MerchantImpactSection: React.FC = () => {
   );
 };
 
+const FreeAutomationSection: React.FC = () => {
+  const automationCards = [
+    {
+      title: 'Dapatkan Bakal Pelanggan Baharu',
+      description: 'Kumpul bakal pelanggan daripada iklan, borang, WhatsApp dan kempen digital secara lebih tersusun.',
+      icon: <UserPlus className="h-7 w-7" />
+    },
+    {
+      title: 'Pengurusan Kewangan Percuma',
+      description: 'Rekod duit masuk, duit keluar, tuntutan dan perbelanjaan harian tanpa sistem yang rumit.',
+      icon: <Landmark className="h-7 w-7" />
+    },
+    {
+      title: 'Pengurusan Pekerja',
+      description: 'Urus maklumat pekerja, kehadiran, cuti dan tugasan dengan proses yang lebih mudah dipantau.',
+      icon: <Users className="h-7 w-7" />
+    },
+    {
+      title: 'Kukuhkan Kepercayaan Pelanggan',
+      description: 'Bina keyakinan pelanggan terhadap perniagaan anda melalui susulan, rekod dan komunikasi yang konsisten.',
+      icon: <Handshake className="h-7 w-7" />
+    }
+  ];
+
+  return (
+    <section className="bg-[#F8FAFC] py-16 md:py-20">
+      <div className="mx-auto max-w-[1280px] px-4 md:px-6">
+        <div className="mb-10 max-w-3xl">
+          <p className="mb-3 font-mono text-sm font-semibold uppercase tracking-[0.18em] text-[#B88712]">
+            Automasi Percuma
+          </p>
+          <h2 className="text-3xl font-extrabold leading-tight text-[#0F172A] md:text-5xl">
+            Automasi cekap, mudah digunakan dan percuma
+          </h2>
+        </div>
+
+        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {automationCards.map((card) => (
+            <article
+              key={card.title}
+              className="flex min-h-[260px] flex-col border border-slate-200 bg-white p-6 shadow-[0_18px_48px_rgba(15,23,42,0.08)] transition-transform duration-300 hover:-translate-y-1 md:p-7"
+            >
+              <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-lg bg-[#D4AF37] text-[#0F172A]">
+                {card.icon}
+              </div>
+              <h3 className="mb-4 text-xl font-extrabold leading-snug text-[#0F172A]">
+                {card.title}
+              </h3>
+              <p className="text-sm leading-7 text-slate-600">
+                {card.description}
+              </p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+};
+
 const BusinessHelpCarouselSection: React.FC = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPinnedScroll, setIsPinnedScroll] = useState(() => (
@@ -383,7 +446,7 @@ const BusinessHelpCarouselSection: React.FC = () => {
   const sectionRef = useRef<HTMLElement | null>(null);
   const helpItems = [
     {
-      title: 'Dapatkan lebih banyak bakal pelanggan melalui automasi ads.',
+      title: 'Dapatkan lebih banyak bakal pelanggan melalui automasi iklan.',
       description: 'Kami bantu susun aliran prospek daripada iklan ke WhatsApp, borang, CRM, atau senarai tindakan pasukan jualan.',
       icon: <Megaphone className="h-8 w-8" />,
       imageSrc: '/assets/business-help-ads-automation.png',
@@ -398,19 +461,19 @@ const BusinessHelpCarouselSection: React.FC = () => {
       mobileImagePosition: '68% center'
     },
     {
-      title: 'Simpan database pelanggan tanpa perlu risau kehilangan data.',
+      title: 'Simpan pangkalan data pelanggan tanpa perlu risau kehilangan data.',
       description: 'Kumpul dan susun rekod pelanggan secara lebih selamat supaya maklumat penting tidak hilang dalam mesej atau buku nota.',
       icon: <Database className="h-8 w-8" />,
       imageSrc: '/assets/business-help-customer-database.png',
-      imageAlt: 'Sistem database pelanggan yang selamat dan mempunyai backup automatik',
+      imageAlt: 'Sistem pangkalan data pelanggan yang selamat dan mempunyai sandaran automatik',
       mobileImagePosition: '72% center'
     },
     {
-      title: 'Automasi email ke pelanggan tentang produk anda.',
-      description: 'Hantar follow-up, promosi, resit, pengumuman produk, atau peringatan secara konsisten tanpa kerja manual berulang.',
+      title: 'Automasi emel kepada pelanggan tentang produk anda.',
+      description: 'Hantar susulan, promosi, resit, pengumuman produk, atau peringatan secara konsisten tanpa kerja manual berulang.',
       icon: <MailCheck className="h-8 w-8" />,
       imageSrc: '/assets/business-help-email-automation.png',
-      imageAlt: 'Automasi email menghantar kempen produk kepada pelanggan'
+      imageAlt: 'Automasi emel menghantar kempen produk kepada pelanggan'
     },
     {
       title: 'Automasi AI sebagai operator pelanggan.',
@@ -688,6 +751,7 @@ const App: React.FC = () => {
           <>
             <Hero />
             <MerchantImpactSection />
+            <FreeAutomationSection />
             <BusinessHelpCarouselSection />
             <DemoToolsSection />
             <Services onServiceSelect={navigateToService} />

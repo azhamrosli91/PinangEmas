@@ -5,22 +5,22 @@ import { Settings, ShieldCheck, Share2, CheckCircle2 } from 'lucide-react';
 const SmartHomeServices: React.FC = () => {
     const services = [
         {
-            title: 'Ecosystem Architecture',
-            description: 'Complete technical setup of your smart home or office foundation. We configure hubs, mesh networks, and primary device clusters.',
+            title: 'Seni Bina Ekosistem',
+            description: 'Tetapan teknikal lengkap untuk asas rumah atau pejabat pintar anda. Kami mengkonfigurasi hub, rangkaian mesh dan kelompok peranti utama.',
             icon: <Settings className="w-8 h-8" />,
-            features: ['Network Optimization', 'Hub Stabilization', 'Device Commissioning']
+            features: ['Pengoptimuman Rangkaian', 'Penstabilan Hub', 'Pentauliahan Peranti']
         },
         {
-            title: 'Security Hardening',
-            description: 'Transforming your space into a fortress. Implementation of AI-powered CCTV, biometrics, and reactive security sensors.',
+            title: 'Pengukuhan Keselamatan',
+            description: 'Menjadikan ruang anda lebih selamat melalui CCTV berkuasa AI, biometrik dan sensor keselamatan responsif.',
             icon: <ShieldCheck className="w-8 h-8" />,
-            features: ['CCTV Remote Access', 'Smart Entry Systems', 'Real-time Alerts']
+            features: ['Akses CCTV Jarak Jauh', 'Sistem Masuk Pintar', 'Amaran Masa Nyata']
         },
         {
-            title: 'Global Integration',
-            description: 'Bridging the gap between brands. We ensure your existing Tuya, Aqara, and Xiaomi devices work as one unified system.',
+            title: 'Integrasi Global',
+            description: 'Menghubungkan pelbagai jenama. Kami memastikan peranti Tuya, Aqara dan Xiaomi anda berfungsi sebagai satu sistem bersepadu.',
             icon: <Share2 className="w-8 h-8" />,
-            features: ['Cross-Brand Logic', 'Voice Mastery', 'Legacy Integration']
+            features: ['Logik Rentas Jenama', 'Kawalan Suara', 'Integrasi Sistem Lama']
         }
     ];
 
@@ -28,10 +28,10 @@ const SmartHomeServices: React.FC = () => {
         <div className="py-24 border-t border-[#AA771C]/10 bg-[#FFFDF8]">
             <div className="container mx-auto px-6">
                 <div className="text-center mb-20">
-                    <h4 className="text-gold text-xs font-black uppercase tracking-[0.4em] mb-4">Professional Expertise</h4>
-                    <h2 className="text-4xl md:text-5xl font-black text-[#101010]">How We <span className="text-gold italic">Empower You.</span></h2>
+                    <h4 className="text-gold text-xs font-black uppercase tracking-[0.4em] mb-4">Kepakaran Profesional</h4>
+                    <h2 className="text-4xl md:text-5xl font-black text-[#101010]">Cara Kami <span className="text-gold italic">Memudahkan Anda.</span></h2>
                     <p className="text-[#101010]/70 mt-6 max-w-2xl mx-auto">
-                        From initial consultation to final automation logic, Pinang Emas provides the technical muscle to make your smart vision a reality.
+                        Daripada konsultasi awal hingga logik automasi akhir, Pinang Emas menyediakan kepakaran teknikal untuk merealisasikan visi ruang pintar anda.
                     </p>
                 </div>
 

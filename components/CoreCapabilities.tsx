@@ -37,15 +37,15 @@ const CoreCapabilities: React.FC<CoreCapabilitiesProps> = ({ features }) => {
                     <div className="max-w-2xl">
                         <h2 className="text-[#AA771C] text-sm font-black tracking-[0.4em] uppercase mb-6 flex items-center">
                             <span className="w-12 h-px bg-gold/30 mr-4"></span>
-                            Core Capabilities
+                            Keupayaan Teras
                         </h2>
                         <h3 className="text-4xl md:text-6xl font-black text-[#101010] leading-tight">
-                            Engineered for <br /><span className="text-gold italic">Unrivaled Reliability.</span>
+                            Dibina untuk <br /><span className="text-gold italic">Kebolehpercayaan Tinggi.</span>
                         </h3>
                     </div>
                     <div className="max-w-sm">
                         <p className="text-[#101010]/70 text-lg leading-relaxed">
-                            Every system we architect is built with a foundation of technical excellence and a commitment to longevity.
+                            Setiap sistem yang kami bina berasaskan kecemerlangan teknikal dan direka untuk kekal relevan dalam jangka panjang.
                         </p>
                     </div>
                 </div>
@@ -79,7 +79,7 @@ const CoreCapabilities: React.FC<CoreCapabilitiesProps> = ({ features }) => {
                                 {/* Micro-detail footer */}
                                 <div className="flex items-center space-x-2 text-[10px] font-black uppercase tracking-[0.2em] text-[#101010]/35 group-hover:text-gold/50 transition-colors">
                                     <div className="w-1.5 h-1.5 rounded-full bg-gold/50 shadow-[0_0_8px_rgba(170,119,28,0.5)]"></div>
-                                    <span>Enterprise Grade Protocol</span>
+                                    <span>Protokol Tahap Perusahaan</span>
                                 </div>
                             </div>
                         </div>

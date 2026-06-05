@@ -17,12 +17,12 @@ const WorkflowInfographic: React.FC = () => {
                 <div className="text-center mb-20">
                     <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-gold/10 border border-gold/20 mb-6">
                         <Activity className="w-3.5 h-3.5 text-gold animate-pulse" />
-                        <span className="text-gold text-[10px] font-black uppercase tracking-[0.3em]">System Architecture</span>
+                        <span className="text-gold text-[10px] font-black uppercase tracking-[0.3em]">Seni Bina Sistem</span>
                     </div>
-                    <h2 className="text-4xl md:text-5xl font-black text-[#101010] mb-6">Visualizing the <span className="text-gold italic">Data Flow</span></h2>
+                    <h2 className="text-4xl md:text-5xl font-black text-[#101010] mb-6">Visualisasi <span className="text-gold italic">Aliran Data</span></h2>
                     <p className="text-[#101010]/70 max-w-2xl mx-auto text-base leading-relaxed">
-                        Our n8n automation engine acts as the central nervous system for your business operations,
-                        connecting disparate tools into a single, high-performance ecosystem.
+                        Enjin automasi n8n kami bertindak sebagai sistem saraf pusat untuk operasi perniagaan anda,
+                        menghubungkan pelbagai alat menjadi satu ekosistem berprestasi tinggi.
                     </p>
                 </div>
 
@@ -35,8 +35,8 @@ const WorkflowInfographic: React.FC = () => {
                             <div className="absolute -top-3 -right-3 w-8 h-8 rounded-2xl bg-gold text-black flex items-center justify-center text-xs font-black shadow-[0_0_20px_rgba(170,119,28,0.5)]">01</div>
                             <div className="absolute inset-0 rounded-[2rem] bg-gold/20 animate-ping opacity-0 group-hover/node:opacity-50"></div>
                         </div>
-                        <h5 className="text-[#101010] font-black text-xl mb-3 tracking-tight">External Input</h5>
-                        <p className="text-[#101010]/55 text-sm text-center max-w-[180px] leading-snug">Webhooks, CRM triggers, or scheduled events.</p>
+                        <h5 className="text-[#101010] font-black text-xl mb-3 tracking-tight">Input Luaran</h5>
+                        <p className="text-[#101010]/55 text-sm text-center max-w-[180px] leading-snug">Webhook, pencetus CRM atau acara berjadual.</p>
                     </div>
 
                     {/* Connector 1 */}
@@ -50,8 +50,8 @@ const WorkflowInfographic: React.FC = () => {
                             <Brain className="w-12 h-12" />
                             <div className="absolute -top-3 -right-3 w-8 h-8 rounded-2xl bg-gold text-black flex items-center justify-center text-xs font-black shadow-[0_0_20px_rgba(170,119,28,0.5)]">02</div>
                         </div>
-                        <h5 className="text-[#101010] font-black text-xl mb-3 tracking-tight">AI & Cognition</h5>
-                        <p className="text-[#101010]/55 text-sm text-center max-w-[180px] leading-snug">Data processing, AI classification, and decision logic.</p>
+                        <h5 className="text-[#101010] font-black text-xl mb-3 tracking-tight">AI & Kognisi</h5>
+                        <p className="text-[#101010]/55 text-sm text-center max-w-[180px] leading-snug">Pemprosesan data, klasifikasi AI dan logik keputusan.</p>
                     </div>
 
                     {/* Connector 2 */}
@@ -65,8 +65,8 @@ const WorkflowInfographic: React.FC = () => {
                             <Database className="w-12 h-12" />
                             <div className="absolute -top-3 -right-3 w-8 h-8 rounded-2xl bg-gold text-black flex items-center justify-center text-xs font-black shadow-[0_0_20px_rgba(170,119,28,0.5)]">03</div>
                         </div>
-                        <h5 className="text-[#101010] font-black text-xl mb-3 tracking-tight">Data Integrity</h5>
-                        <p className="text-[#101010]/55 text-sm text-center max-w-[180px] leading-snug">Cloud storage sync & legacy system integration.</p>
+                        <h5 className="text-[#101010] font-black text-xl mb-3 tracking-tight">Integriti Data</h5>
+                        <p className="text-[#101010]/55 text-sm text-center max-w-[180px] leading-snug">Penyegerakan storan cloud dan integrasi sistem lama.</p>
                     </div>
 
                     {/* Connector 3 */}
@@ -80,8 +80,8 @@ const WorkflowInfographic: React.FC = () => {
                             <CheckCircle2 className="w-12 h-12" />
                             <div className="absolute -top-3 -right-3 w-8 h-8 rounded-2xl bg-gold text-black flex items-center justify-center text-xs font-black">04</div>
                         </div>
-                        <h5 className="text-[#101010] font-black text-xl mb-3 tracking-tight">Outcome</h5>
-                        <p className="text-[#101010]/55 text-sm text-center max-w-[180px] leading-snug">Final execution, delivery, and reporting status.</p>
+                        <h5 className="text-[#101010] font-black text-xl mb-3 tracking-tight">Hasil</h5>
+                        <p className="text-[#101010]/55 text-sm text-center max-w-[180px] leading-snug">Pelaksanaan akhir, penghantaran dan status laporan.</p>
                     </div>
 
                 </div>

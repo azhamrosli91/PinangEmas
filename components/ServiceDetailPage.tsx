@@ -38,11 +38,11 @@ const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ service, onBack, 
     if (service.id === 'hrms-system') {
       window.open('https://hrms.pinangemas.com.my', '_blank');
     } else {
-      let message = `Hello Pinang Emas, I'm interested in your ${service.title} service.`;
+      let message = `Salam Pinang Emas, saya berminat dengan perkhidmatan ${service.title}.`;
       if (planName) {
-        message = `Hello Pinang Emas, I'm interested in the [${planName}] tier for your ${service.title} service.`;
+        message = `Salam Pinang Emas, saya berminat dengan pakej [${planName}] untuk perkhidmatan ${service.title}.`;
       }
-      message += ` I saw your expertise in development and would like to get a quote.`;
+      message += ` Saya ingin mendapatkan sebut harga dan maklumat lanjut.`;
       window.open(`https://wa.me/60146595979?text=${encodeURIComponent(message)}`, '_blank');
     }
   };
@@ -61,7 +61,7 @@ const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ service, onBack, 
             onClick={onBack}
             className="flex items-center text-[#AA771C] font-black uppercase tracking-widest text-xs mb-12 hover:translate-x-[-8px] transition-transform group"
           >
-            <ArrowLeft className="mr-3 w-4 h-4" /> Back to Solutions
+            <ArrowLeft className="mr-3 w-4 h-4" /> Kembali ke Solusi
           </button>
 
           <div className="flex flex-col lg:flex-row items-center gap-16">
@@ -87,7 +87,7 @@ const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ service, onBack, 
                   className="px-12 py-6 rounded-2xl gold-gradient text-black font-black text-xl hover:scale-105 transition-all shadow-[0_20px_40px_rgba(170,119,28,0.3)] flex items-center group"
                 >
                   {isHrms ? <ExternalLink className="mr-3 w-6 h-6" /> : <MessageCircle className="mr-3 w-6 h-6" />}
-                  {isHrms ? 'Try It Now' : 'Get the Quote Now'}
+                  {isHrms ? 'Cuba Sekarang' : 'Dapatkan Sebut Harga'}
                   <ArrowRight className="ml-3 w-6 h-6 group-hover:translate-x-2 transition-transform" />
                 </button>
               )}
@@ -96,9 +96,9 @@ const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ service, onBack, 
             <div className="lg:w-1/3">
               <div className="card-glass p-8 rounded-[2rem] relative">
                 <div className="absolute -top-4 -right-4 bg-[#AA771C] px-4 py-2 rounded-xl text-black font-black text-xs uppercase tracking-tighter transform rotate-12">
-                  Premium Tier
+                  Pakej Premium
                 </div>
-                <h4 className="text-[#101010] font-black text-xl mb-6">Key Benefits</h4>
+                <h4 className="text-[#101010] font-black text-xl mb-6">Manfaat Utama</h4>
                 <ul className="space-y-4">
                   {service.benefits.map((benefit, i) => (
                     <li key={i} className="flex items-center text-[#101010]/75 font-medium">
@@ -173,8 +173,8 @@ const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ service, onBack, 
           )}
 
           <div className="mb-16 text-center">
-            <h2 className="text-[#AA771C] text-sm font-black tracking-[0.3em] uppercase mb-4">Investment Plans</h2>
-            <p className="text-4xl font-black text-[#101010]">Transparent. Professional. <span className="text-gold italic">Valuable.</span></p>
+            <h2 className="text-[#AA771C] text-sm font-black tracking-[0.3em] uppercase mb-4">Pelan Pelaburan</h2>
+            <p className="text-4xl font-black text-[#101010]">Telus. Profesional. <span className="text-gold italic">Berbaloi.</span></p>
           </div>
 
           <div className={`grid grid-cols-1 gap-8 max-w-[1600px] mx-auto ${service.pricing.length === 1
@@ -187,14 +187,14 @@ const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ service, onBack, 
               <div key={i} className={`card-glass p-8 rounded-[2rem] flex flex-col h-full relative transition-all duration-500 hover:scale-[1.02] w-full max-w-sm mx-auto ${plan.isPopular ? 'border-[#AA771C]/50 shadow-[0_20px_45px_rgba(170,119,28,0.14)]' : ''}`}>
                 {plan.isPopular && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#AA771C] text-black text-[10px] font-black uppercase tracking-widest px-4 py-1 rounded-full">
-                    Most Popular
+                    Paling Popular
                   </div>
                 )}
                 <h3 className="text-[#101010] font-black text-lg mb-2">{plan.name}</h3>
                 <div className="flex items-baseline mb-6">
                   <span className="text-3xl font-black text-gold">{plan.price}</span>
                   <span className="text-[#101010]/50 text-[10px] ml-2 font-bold uppercase tracking-widest">
-                    / {plan.period || 'one-time'}
+                    / {plan.period || 'sekali bayar'}
                   </span>
                 </div>
                 <p className="text-[#101010]/70 text-sm mb-8 leading-relaxed min-h-[6rem]">
@@ -212,7 +212,7 @@ const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ service, onBack, 
                   onClick={() => handleAction(plan.name)}
                   className="w-full py-4 rounded-xl gold-gradient text-black font-black text-xs hover:opacity-90 transition-all flex items-center justify-center space-x-2"
                 >
-                  {isHrms ? 'Get Started Free' : 'Select Plan'}
+                  {isHrms ? 'Mula Percuma' : 'Pilih Pelan'}
                 </button>
               </div>
             ))}
@@ -220,18 +220,18 @@ const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ service, onBack, 
 
           {/* Custom Quote CTA */}
           <div className="mt-16 text-center max-w-2xl mx-auto p-8 rounded-3xl border border-dashed border-[#AA771C]/30">
-            <h4 className="text-[#101010] font-bold text-xl mb-4">{isHrms ? 'Ready to modernize your HR?' : 'Need something more?'}</h4>
+            <h4 className="text-[#101010] font-bold text-xl mb-4">{isHrms ? 'Sedia modenkan HR anda?' : 'Perlukan sesuatu yang lebih khusus?'}</h4>
             <p className="text-[#101010]/70 mb-8">
               {isHrms
-                ? 'Join hundreds of Malaysian companies optimizing their workforce with Pinang Emas HRMS. Direct portal access available now.'
-                : 'For custom enterprise requirements, multiple agents, or complex integrations, please reach out to us directly via WhatsApp.'}
+                ? 'Sertai ratusan syarikat Malaysia yang mengoptimumkan tenaga kerja dengan Pinang Emas HRMS. Akses portal tersedia sekarang.'
+                : 'Untuk keperluan perusahaan tersuai, pelbagai agen atau integrasi kompleks, hubungi kami terus melalui WhatsApp.'}
             </p>
             <button
               onClick={handleAction}
               className={`px-10 py-5 rounded-2xl ${isHrms ? 'bg-[#AA771C] text-black' : 'bg-[#25D366]/10 border border-[#25D366]/30 text-[#25D366]'} font-black flex items-center justify-center mx-auto hover:scale-105 transition-all group`}
             >
               {isHrms ? <ExternalLink className="mr-3 w-5 h-5" /> : <MessageCircle className="mr-3 w-5 h-5" />}
-              {isHrms ? 'Register Now at hrms.pinangemas.com.my' : 'Get Quote Now'}
+              {isHrms ? 'Daftar Sekarang di hrms.pinangemas.com.my' : 'Dapatkan Sebut Harga'}
             </button>
           </div>
         </div>
@@ -245,7 +245,7 @@ const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({ service, onBack, 
         >
           <div className="absolute inset-0 bg-gold opacity-0 group-hover:opacity-[0.02] transition-opacity"></div>
           <div>
-            <p className="text-[#AA771C] text-xs font-black uppercase tracking-[0.3em] mb-4">Next Offering</p>
+            <p className="text-[#AA771C] text-xs font-black uppercase tracking-[0.3em] mb-4">Tawaran Seterusnya</p>
             <h3 className="text-4xl md:text-5xl font-black text-[#101010] group-hover:text-gold transition-colors">{nextService.title}</h3>
           </div>
           <div className="mt-8 md:mt-0 w-20 h-20 rounded-full gold-gradient flex items-center justify-center text-black group-hover:scale-110 transition-transform">

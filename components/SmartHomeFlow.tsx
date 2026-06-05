@@ -5,25 +5,25 @@ import { User, Zap, Mic, Wind, Camera, Unlock, ArrowRight, Play } from 'lucide-r
 const SmartHomeFlow: React.FC = () => {
     const scenarios = [
         {
-            title: 'Presence Detection',
-            trigger: 'Motion detected in hallway',
-            action: 'Lights illuminate automatically',
+            title: 'Pengesanan Kehadiran',
+            trigger: 'Pergerakan dikesan di laluan',
+            action: 'Lampu menyala automatik',
             icon: <User className="w-6 h-6" />,
             subIcon: <Zap className="w-4 h-4 text-gold" />,
             color: 'gold'
         },
         {
-            title: 'Voice Activation',
-            trigger: '"Hey Google, turn on AC"',
-            action: 'Climate control sets to 22°C',
+            title: 'Aktivasi Suara',
+            trigger: '"Hey Google, hidupkan AC"',
+            action: 'Suhu ditetapkan kepada 22°C',
             icon: <Mic className="w-6 h-6" />,
             subIcon: <Wind className="w-4 h-4 text-blue-400" />,
             color: 'blue'
         },
         {
-            title: 'Smart AI Security',
-            trigger: 'Known face at the door',
-            action: 'Smart lock releases entry',
+            title: 'Keselamatan AI Pintar',
+            trigger: 'Wajah dikenali di pintu',
+            action: 'Kunci pintar membuka akses',
             icon: <Camera className="w-6 h-6" />,
             subIcon: <Unlock className="w-4 h-4 text-emerald-400" />,
             color: 'emerald'
@@ -39,11 +39,11 @@ const SmartHomeFlow: React.FC = () => {
                 <div className="text-center mb-20">
                     <h4 className="text-gold text-xs font-black uppercase tracking-[0.4em] mb-4 flex items-center justify-center">
                         <Play className="w-3 h-3 mr-2 fill-gold" />
-                        Live Scenarios
+                        Senario Langsung
                     </h4>
-                    <h2 className="text-4xl md:text-5xl font-black text-[#101010]">How Your Space <span className="text-gold italic">Reacts.</span></h2>
+                    <h2 className="text-4xl md:text-5xl font-black text-[#101010]">Cara Ruang Anda <span className="text-gold italic">Bertindak Balas.</span></h2>
                     <p className="text-[#101010]/70 mt-6 max-w-xl mx-auto">
-                        Experience an environment that anticipates your needs through intelligent sensor fusion and AI processing.
+                        Alami persekitaran yang memahami keperluan anda melalui gabungan sensor pintar dan pemprosesan AI.
                     </p>
                 </div>
 
@@ -67,7 +67,7 @@ const SmartHomeFlow: React.FC = () => {
 
                                 <div className="space-y-4 w-full">
                                     <div className="p-4 rounded-2xl bg-[#F8F2DF] border border-[#AA771C]/10 text-xs font-bold text-[#101010]/70 uppercase tracking-widest flex items-center justify-between">
-                                        <span>Input</span>
+                                        <span>Pencetus</span>
                                         <span className="text-[#101010] italic">{s.trigger}</span>
                                     </div>
 
@@ -76,7 +76,7 @@ const SmartHomeFlow: React.FC = () => {
                                     </div>
 
                                     <div className="p-4 rounded-2xl bg-gold/5 border border-gold/10 text-xs font-black text-gold uppercase tracking-widest flex items-center justify-between">
-                                        <span>Action</span>
+                                        <span>Tindakan</span>
                                         <span>{s.action}</span>
                                     </div>
                                 </div>

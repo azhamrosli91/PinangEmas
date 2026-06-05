@@ -5,26 +5,26 @@ import { Database, Filter, BrainCircuit, Activity, LineChart, Sparkles, Binary, 
 const AITrainingFlow: React.FC = () => {
     const steps = [
         {
-            title: 'Data Intake',
-            description: 'Ingestion of raw multi-modal data: Images, Text, and Sensor logs.',
+            title: 'Penerimaan Data',
+            description: 'Kemasukan data mentah pelbagai mod: imej, teks dan log sensor.',
             icon: <Database className="w-8 h-8" />,
             color: 'blue'
         },
         {
-            title: 'AI Cleaning',
-            description: 'Automated sanitation & labeling using proprietary cleaning agents.',
+            title: 'Pembersihan AI',
+            description: 'Pembersihan dan pelabelan automatik menggunakan agen pembersihan tersuai.',
             icon: <Filter className="w-8 h-8" />,
             color: 'purple'
         },
         {
-            title: 'Model Training',
-            description: 'Deep neural network synthesis on our high-performance GPU clusters.',
+            title: 'Latihan Model',
+            description: 'Latihan rangkaian neural mendalam pada kluster GPU berprestasi tinggi.',
             icon: <Binary className="w-8 h-8" />,
             color: 'gold'
         },
         {
-            title: 'Live Inference',
-            description: 'Deployment to production with real-time feedback loop optimization.',
+            title: 'Inferens Langsung',
+            description: 'Pelaksanaan ke produksi dengan pengoptimuman maklum balas masa nyata.',
             icon: <Share2 className="w-8 h-8" />,
             color: 'emerald'
         }
@@ -39,10 +39,10 @@ const AITrainingFlow: React.FC = () => {
             </div>
 
             <div className="text-center mb-20">
-                <h4 className="text-gold text-xs font-black uppercase tracking-[0.4em] mb-4">Neural Architecture</h4>
-                <h2 className="text-4xl md:text-5xl font-black text-[#101010] italic">AI Training <span className="text-gold">Pipeline</span></h2>
+                <h4 className="text-gold text-xs font-black uppercase tracking-[0.4em] mb-4">Seni Bina Neural</h4>
+                <h2 className="text-4xl md:text-5xl font-black text-[#101010] italic">Pipeline <span className="text-gold">Latihan AI</span></h2>
                 <p className="text-[#101010]/70 mt-6 max-w-2xl mx-auto">
-                    From raw noise to intelligent assets—our iterative training loop ensures your models evolve with your business data.
+                    Daripada data mentah kepada aset pintar, kitaran latihan berulang kami memastikan model anda berkembang bersama data perniagaan.
                 </p>
             </div>
 
@@ -71,7 +71,7 @@ const AITrainingFlow: React.FC = () => {
                                 </div>
 
                                 <div className="text-center group-hover:translate-y-[-5px] transition-transform duration-500">
-                                    <span className="text-[10px] font-black uppercase tracking-widest text-gold/40 mb-2 block">Phase 0{idx + 1}</span>
+                                    <span className="text-[10px] font-black uppercase tracking-widest text-gold/40 mb-2 block">Fasa 0{idx + 1}</span>
                                     <h5 className="text-xl font-black text-[#101010] mb-3 group-hover:text-gold transition-colors">{step.title}</h5>
                                     <p className="text-[#101010]/55 text-sm leading-relaxed max-w-[200px] mx-auto group-hover:text-[#AA771C]/75 transition-colors">
                                         {step.description}

@@ -5,20 +5,20 @@ import { Database, Filter, Microscope, ScanEye, BrainCircuit, Activity } from 'l
 const AISpecialties: React.FC = () => {
     const specialties = [
         {
-            title: 'Image Training',
-            description: 'Training deep learning models on custom datasets for precise object recognition and visual defect detection.',
+            title: 'Latihan Imej',
+            description: 'Melatih model deep learning menggunakan set data tersuai untuk pengecaman objek dan pengesanan kecacatan visual yang tepat.',
             icon: <ScanEye className="w-6 h-6" />,
             tag: 'Computer Vision'
         },
         {
-            title: 'Data Science',
-            description: 'Applying advanced mathematical models to identify correlations and drive predictive business intelligence.',
+            title: 'Sains Data',
+            description: 'Menggunakan model matematik lanjutan untuk mengenal pasti korelasi dan menghasilkan risikan perniagaan ramalan.',
             icon: <Microscope className="w-6 h-6" />,
             tag: 'Analytics'
         },
         {
-            title: 'Data Cleaning',
-            description: 'Automated ETL pipelines that sanitize and structure noisy data for 99.9% accurate AI training.',
+            title: 'Pembersihan Data',
+            description: 'Pipeline ETL automatik yang membersih dan menyusun data tidak kemas untuk latihan AI yang lebih tepat.',
             icon: <Filter className="w-6 h-6" />,
             tag: 'Processing'
         }
@@ -31,11 +31,11 @@ const AISpecialties: React.FC = () => {
                     <div className="lg:w-1/2">
                         <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-gold/10 border border-gold/20 mb-6 font-black text-[10px] text-gold uppercase tracking-[0.3em]">
                             <BrainCircuit className="w-3 h-3" />
-                            <span>Advanced Engineering</span>
+                            <span>Kejuruteraan Lanjutan</span>
                         </div>
-                        <h2 className="text-4xl md:text-6xl font-black text-[#101010] mb-8">Intelligence Beyond <br /><span className="text-gold italic">Code.</span></h2>
+                        <h2 className="text-4xl md:text-6xl font-black text-[#101010] mb-8">Kepintaran Melangkaui <br /><span className="text-gold italic">Kod.</span></h2>
                         <p className="text-[#101010]/70 text-lg leading-relaxed max-w-xl">
-                            From raw data to refined decision-making engines, we provide the full-cycle AI development needed for modern enterprise scale.
+                            Daripada data mentah kepada enjin keputusan yang matang, kami menyediakan pembangunan AI kitaran penuh untuk skala perusahaan moden.
                         </p>
                     </div>
                     <div className="lg:w-1/2 grid grid-cols-1 gap-6">

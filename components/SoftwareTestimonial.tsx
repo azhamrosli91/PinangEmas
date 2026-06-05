@@ -16,14 +16,14 @@ const SoftwareTestimonial: React.FC = () => {
                     </div>
 
                     <h4 className="text-3xl md:text-5xl font-black text-[#101010] italic leading-tight mb-12">
-                        "Pinang Emas didn't just build a portal; they architected a solution that scaled our operations by 400% in a single year. Their technical depth is unparalleled in the region."
+                        "Pinang Emas bukan sekadar membina portal; mereka membina solusi yang mengembangkan operasi kami sebanyak 400% dalam satu tahun. Kedalaman teknikal mereka sangat mengagumkan."
                     </h4>
 
                     <div className="flex items-center space-x-6">
                         <img src="/assets/ainsofiah.png" alt="Aina Sofiah" className="w-20 h-20 rounded-full border-2 border-gold grayscale hover:grayscale-0 transition-all duration-500" />
                         <div>
                             <p className="font-black text-[#101010] text-2xl tracking-tight">Aina Sofiah</p>
-                            <p className="text-gold font-bold uppercase tracking-[0.2em] text-xs">HR Manager</p>
+                            <p className="text-gold font-bold uppercase tracking-[0.2em] text-xs">Pengurus HR</p>
                         </div>
                     </div>
                 </div>

@@ -16,8 +16,8 @@ const Contact: React.FC<ContactProps> = ({ compact = false }) => {
     const service = (target.elements.namedItem('service') as HTMLSelectElement).value;
     const message = (target.elements.namedItem('message') as HTMLTextAreaElement).value;
 
-    const subject = `Project Enquiry: ${service} - From ${name}`;
-    const body = `Full Name: ${name}\nEmail: ${email}\nService Interested In: ${service}\n\nMessage:\n${message}`;
+    const subject = `Pertanyaan Projek: ${service} - Daripada ${name}`;
+    const body = `Nama Penuh: ${name}\nEmel: ${email}\nPerkhidmatan Diminati: ${service}\n\nMesej:\n${message}`;
 
     window.location.href = `mailto:sales.pinangemas@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
@@ -29,7 +29,7 @@ const Contact: React.FC<ContactProps> = ({ compact = false }) => {
   };
 
   const handleWhatsApp = () => {
-    window.open('https://wa.me/60146595979?text=Hello%20Pinang%20Emas,%20I%20would%20like%20to%20enquire%20about%20your%20services.', '_blank');
+    window.open('https://wa.me/60146595979?text=Salam%20Pinang%20Emas,%20saya%20ingin%20bertanya%20tentang%20perkhidmatan%20anda.', '_blank');
   };
 
   const inputClass = 'w-full border border-slate-300 bg-white px-4 py-3 text-[#0F172A] outline-none transition-all focus:border-[#0F172A] focus:ring-2 focus:ring-[#D4AF37]/35';
@@ -58,7 +58,7 @@ const Contact: React.FC<ContactProps> = ({ compact = false }) => {
               <div className="flex items-center gap-4">
                 <Phone className="h-5 w-5 text-[#D4AF37]" />
                 <a
-                  href="https://wa.me/60146595979?text=Hello%20Pinang%20Emas,%20I%20would%20like%20to%20enquire%20about%20your%20services."
+                  href="https://wa.me/60146595979?text=Salam%20Pinang%20Emas,%20saya%20ingin%20bertanya%20tentang%20perkhidmatan%20anda."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="transition-colors hover:text-[#FFE088]"
@@ -100,13 +100,13 @@ const Contact: React.FC<ContactProps> = ({ compact = false }) => {
                 <div>
                   <label className={labelClass}>Perkhidmatan Diminati</label>
                   <select name="service" className={`${inputClass} appearance-none`}>
-                    <option>n8n Workflow</option>
-                    <option>HRMS System</option>
+                    <option>Aliran Kerja n8n</option>
+                    <option>Sistem HRMS</option>
                     <option>Xpen Expense Tracker</option>
-                    <option>Customize Software</option>
-                    <option>AI Solutions</option>
-                    <option>Website Hosting</option>
-                    <option>Smart Home/Office</option>
+                    <option>Perisian Tersuai</option>
+                    <option>Solusi AI</option>
+                    <option>Hosting Laman Web</option>
+                    <option>Rumah/Pejabat Pintar</option>
                   </select>
                 </div>
 
