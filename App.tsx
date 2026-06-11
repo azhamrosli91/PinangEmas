@@ -24,6 +24,7 @@ import {
   MailCheck,
   Megaphone,
   ReceiptText,
+  Store,
   UserPlus,
   Users,
   WalletCards
@@ -293,7 +294,10 @@ const DemoToolsSection: React.FC = () => {
       description: 'Urus cuti, tuntutan, dan profil pekerja dalam satu platform yang mudah digunakan.',
       href: 'https://hrms.pinangemas.com.my',
       icon: <BadgeCheck className="h-6 w-6" />,
-      ctaLabel: 'Cuba Sekarang'
+      imageSrc: '/assets/hrms-showcase.png',
+      imageAlt: 'Pinang Emas HRMS memudahkan pengurusan sumber manusia',
+      ctaLabel: 'Cuba Sekarang',
+      highlightText: 'Automasi Cuti, Tuntutan, Kehadiran & Kelulusan'
     },
     {
       title: 'Xpen Expense Tracker',
@@ -304,6 +308,16 @@ const DemoToolsSection: React.FC = () => {
       imageAlt: 'Xpen Expense Tracker membantu mengurus kewangan perniagaan dengan paparan aplikasi mudah alih',
       ctaLabel: 'Cuba Sekarang Percuma',
       highlightText: 'Tanpa Bayaran, Kad Kredit, Percuma sepenuhnya'
+    },
+    {
+      title: 'BusinessXpen',
+      description: 'Alat percuma untuk perniagaan mengurus perbelanjaan, sistem POS, janji temu, dan pelbagai fungsi lain.',
+      href: 'https://businessxpen.pinangemas.com.my',
+      icon: <Store className="h-6 w-6" />,
+      imageSrc: '/assets/businessxpen-showcase.png',
+      imageAlt: 'BusinessXpen membantu mengurus perniagaan dengan POS, janji temu, dan perbelanjaan',
+      ctaLabel: 'Cuba Sekarang Percuma',
+      highlightText: 'Sistem POS, Janji Temu & Urus Perbelanjaan'
     }
   ];
 
@@ -317,7 +331,7 @@ const DemoToolsSection: React.FC = () => {
           </p>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
           {tools.map((tool) => (
             <article key={tool.title} className="flex flex-col border border-white/10 bg-white/[0.06] p-6 transition-colors hover:bg-white/[0.10] md:p-8 lg:p-10">
               {tool.imageSrc ? (
